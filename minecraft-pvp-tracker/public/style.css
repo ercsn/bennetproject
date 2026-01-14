@@ -1,31 +1,46 @@
 /* ============================================
-   MINECRAFT PVP STATS TRACKER - TRUE MC STYLE
+   MINECRAFT PVP STATS - AUTHENTIC BLOCK STYLE
    ============================================ */
 
-/* CSS Variables - TRUE MINECRAFT PALETTE */
+/* CSS Variables - AUTHENTIC MINECRAFT BLOCKS */
 :root {
-  /* Block Materials */
+  /* Block Colors - with texture variations */
   --mc-obsidian: #100010;
   --mc-deepslate: #1a1a1a;
+  --mc-stone-dark: #6b6b6b;
   --mc-stone: #7d7d7d;
+  --mc-stone-light: #8f8f8f;
   --mc-cobble: #828282;
+
+  /* Oak Planks variations */
+  --mc-planks-dark: #6b4423;
   --mc-planks: #9c7853;
-  --mc-dirt: #866043;
+  --mc-planks-light: #b88e6a;
+
+  /* Dirt variations */
+  --mc-dirt-dark: #7a5837;
+  --mc-dirt: #8b6239;
+  --mc-dirt-light: #9c7648;
+
+  /* Grass variations */
+  --mc-grass-dark: #5f9741;
   --mc-grass: #79c05a;
+  --mc-grass-light: #8dd865;
 
   /* Game States */
   --mc-emerald: #50c878;
+  --mc-emerald-dark: #2ea058;
   --mc-redstone: #ff0000;
-  --mc-lapis: #4a80ff;
+  --mc-redstone-dark: #cc0000;
   --mc-gold: #fcee4b;
+  --mc-lapis: #4a80ff;
   --mc-diamond: #5dade2;
 
-  /* UI Colors */
+  /* UI */
   --mc-text-white: #ffffff;
   --mc-text-gray: #aaaaaa;
   --mc-text-dark: #3f3f3f;
   --mc-shadow: #000000;
-  --mc-highlight: #ffffff;
 
   /* Spacing - 8px grid */
   --mc-unit: 8px;
@@ -34,12 +49,8 @@
   --mc-space-3: 24px;
   --mc-space-4: 32px;
 
-  /* Pixel bevels */
-  --mc-bevel-light: 2px;
-  --mc-bevel-dark: 2px;
-
-  /* Fonts */
-  --mc-font: 'Minecraft', 'Press Start 2P', monospace;
+  /* Font */
+  --mc-font: 'Press Start 2P', 'Courier New', monospace;
 }
 
 /* Reset */
@@ -48,28 +59,56 @@
   padding: 0;
   box-sizing: border-box;
   image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
   image-rendering: crisp-edges;
 }
 
-/* Body - Minecraft Title Screen Style */
+/* Body - Deepslate/Stone Block Background */
 body {
   font-family: var(--mc-font);
   background: var(--mc-deepslate);
   background-image:
-    /* Pixel noise */
+    /* Noise pattern - like actual MC blocks */
+    repeating-linear-gradient(
+      0deg,
+      transparent 0px,
+      rgba(255, 255, 255, 0.02) 1px,
+      transparent 2px,
+      transparent 3px,
+      rgba(0, 0, 0, 0.03) 4px,
+      transparent 5px,
+      transparent 7px,
+      rgba(255, 255, 255, 0.01) 8px,
+      transparent 9px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent 0px,
+      rgba(255, 255, 255, 0.01) 1px,
+      transparent 2px,
+      rgba(0, 0, 0, 0.02) 3px,
+      transparent 4px,
+      transparent 6px,
+      rgba(255, 255, 255, 0.02) 7px,
+      transparent 8px,
+      transparent 10px,
+      rgba(0, 0, 0, 0.01) 11px,
+      transparent 12px
+    ),
+    /* 16x16 block grid */
     repeating-linear-gradient(
       0deg,
       transparent,
-      transparent 8px,
-      rgba(255, 255, 255, 0.02) 8px,
-      rgba(255, 255, 255, 0.02) 16px
+      transparent 16px,
+      rgba(255, 255, 255, 0.01) 16px,
+      rgba(255, 255, 255, 0.01) 17px
     ),
     repeating-linear-gradient(
       90deg,
       transparent,
-      transparent 8px,
-      rgba(255, 255, 255, 0.02) 8px,
-      rgba(255, 255, 255, 0.02) 16px
+      transparent 16px,
+      rgba(255, 255, 255, 0.01) 16px,
+      rgba(255, 255, 255, 0.01) 17px
     );
   color: var(--mc-text-white);
   min-height: 100vh;
@@ -85,51 +124,70 @@ body {
 }
 
 /* ==================
-   HEADER - MC MENU BAR
+   HEADER - OAK PLANKS
    ================== */
 
 header {
   background: var(--mc-planks);
-  border: 2px solid var(--mc-shadow);
-  border-top-color: rgba(255, 255, 255, 0.3);
-  border-left-color: rgba(255, 255, 255, 0.3);
+  background-image:
+    /* Wood texture noise */
+    repeating-linear-gradient(
+      0deg,
+      transparent 0px,
+      rgba(0, 0, 0, 0.08) 1px,
+      transparent 2px,
+      rgba(107, 68, 35, 0.3) 3px,
+      transparent 4px,
+      rgba(0, 0, 0, 0.05) 5px,
+      transparent 7px,
+      rgba(188, 142, 106, 0.2) 8px,
+      transparent 10px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent 0px,
+      rgba(0, 0, 0, 0.06) 1px,
+      transparent 3px,
+      rgba(107, 68, 35, 0.2) 4px,
+      transparent 6px,
+      rgba(188, 142, 106, 0.15) 7px,
+      transparent 9px,
+      rgba(0, 0, 0, 0.04) 11px,
+      transparent 13px
+    ),
+    /* Plank lines */
+    repeating-linear-gradient(
+      90deg,
+      var(--mc-planks),
+      var(--mc-planks) 30px,
+      var(--mc-planks-dark) 30px,
+      var(--mc-planks-dark) 32px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 15px,
+      rgba(0, 0, 0, 0.15) 15px,
+      rgba(0, 0, 0, 0.15) 16px
+    );
+  border: 3px solid var(--mc-shadow);
+  border-top-color: var(--mc-planks-light);
+  border-left-color: var(--mc-planks-light);
+  border-bottom-color: var(--mc-planks-dark);
+  border-right-color: var(--mc-planks-dark);
   padding: var(--mc-space-2) var(--mc-space-3);
   margin-bottom: var(--mc-space-2);
   position: relative;
   box-shadow: 0 4px 0 var(--mc-shadow);
 }
 
-/* Wood plank lines */
-header::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-image:
-    repeating-linear-gradient(
-      90deg,
-      transparent,
-      transparent 31px,
-      rgba(0, 0, 0, 0.15) 31px,
-      rgba(0, 0, 0, 0.15) 32px
-    ),
-    repeating-linear-gradient(
-      0deg,
-      transparent,
-      transparent 15px,
-      rgba(0, 0, 0, 0.1) 15px,
-      rgba(0, 0, 0, 0.1) 16px
-    );
-  pointer-events: none;
-}
-
 header h1 {
   font-family: var(--mc-font);
   font-size: 20px;
   color: var(--mc-text-white);
-  text-shadow: 2px 2px 0 var(--mc-shadow);
+  text-shadow:
+    2px 2px 0 var(--mc-shadow),
+    3px 3px 0 rgba(0, 0, 0, 0.5);
   letter-spacing: 1px;
   margin-bottom: var(--mc-space-2);
   position: relative;
@@ -144,15 +202,39 @@ nav {
   z-index: 1;
 }
 
-/* MC Stone Button Style */
+/* Stone Button */
 nav a {
   font-family: var(--mc-font);
   font-size: 12px;
   padding: var(--mc-space-1) var(--mc-space-2);
   background: var(--mc-stone);
+  background-image:
+    /* Stone texture */
+    repeating-linear-gradient(
+      45deg,
+      transparent 0px,
+      rgba(0, 0, 0, 0.08) 1px,
+      transparent 2px,
+      rgba(255, 255, 255, 0.04) 3px,
+      transparent 5px,
+      rgba(0, 0, 0, 0.06) 6px,
+      transparent 8px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      transparent 0px,
+      rgba(0, 0, 0, 0.05) 1px,
+      transparent 3px,
+      rgba(255, 255, 255, 0.03) 4px,
+      transparent 6px,
+      rgba(0, 0, 0, 0.04) 7px,
+      transparent 10px
+    );
   border: 2px solid var(--mc-shadow);
-  border-top-color: rgba(255, 255, 255, 0.4);
-  border-left-color: rgba(255, 255, 255, 0.4);
+  border-top-color: var(--mc-stone-light);
+  border-left-color: var(--mc-stone-light);
+  border-bottom-color: var(--mc-stone-dark);
+  border-right-color: var(--mc-stone-dark);
   color: var(--mc-text-white);
   text-decoration: none;
   text-transform: uppercase;
@@ -161,29 +243,33 @@ nav a {
   position: relative;
   text-shadow: 1px 1px 0 var(--mc-shadow);
   cursor: pointer;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
 }
 
 nav a:hover {
   background: var(--mc-cobble);
-  transform: translate(0, -1px);
-  box-shadow: 0 3px 0 var(--mc-shadow);
+  transform: translate(0, -2px);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.1),
+    0 4px 0 var(--mc-shadow);
 }
 
 nav a:active {
   transform: translate(0, 2px);
-  border-top-color: var(--mc-shadow);
-  border-left-color: var(--mc-shadow);
-  border-bottom-color: rgba(255, 255, 255, 0.4);
-  border-right-color: rgba(255, 255, 255, 0.4);
-  box-shadow: none;
+  border-top-color: var(--mc-stone-dark);
+  border-left-color: var(--mc-stone-dark);
+  border-bottom-color: var(--mc-stone-light);
+  border-right-color: var(--mc-stone-light);
+  box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 nav a.active {
   background: var(--mc-cobble);
-  border-top-color: var(--mc-shadow);
-  border-left-color: var(--mc-shadow);
+  border-top-color: var(--mc-stone-dark);
+  border-left-color: var(--mc-stone-dark);
   color: var(--mc-gold);
   text-shadow: 1px 1px 0 var(--mc-shadow);
+  box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.4);
 }
 
 /* ==================
@@ -197,7 +283,7 @@ main {
 }
 
 /* ==================
-   STAT CARDS - INVENTORY SLOT STYLE
+   STAT CARDS - STONE BLOCKS
    ================== */
 
 .stats-grid {
@@ -208,46 +294,61 @@ main {
 
 .stat-card {
   background: var(--mc-stone);
-  border: 2px solid var(--mc-shadow);
-  border-top-color: rgba(255, 255, 255, 0.3);
-  border-left-color: rgba(255, 255, 255, 0.3);
-  padding: var(--mc-space-2);
-  text-align: center;
-  position: relative;
-  transition: transform 0.05s;
-  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.3);
-}
-
-/* Inventory slot grid pattern */
-.stat-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
   background-image:
+    /* Stone block texture - very noisy like actual MC */
+    repeating-linear-gradient(
+      37deg,
+      transparent 0px,
+      rgba(0, 0, 0, 0.12) 1px,
+      transparent 2px,
+      rgba(255, 255, 255, 0.06) 3px,
+      transparent 4px,
+      rgba(0, 0, 0, 0.08) 5px,
+      transparent 7px,
+      rgba(255, 255, 255, 0.04) 8px,
+      transparent 10px
+    ),
+    repeating-linear-gradient(
+      143deg,
+      transparent 0px,
+      rgba(0, 0, 0, 0.1) 1px,
+      transparent 3px,
+      rgba(255, 255, 255, 0.05) 4px,
+      transparent 6px,
+      rgba(0, 0, 0, 0.07) 7px,
+      transparent 9px
+    ),
+    /* 8x8 pixel grid like inventory slot */
     repeating-linear-gradient(
       0deg,
       transparent,
       transparent 8px,
-      rgba(0, 0, 0, 0.05) 8px,
-      rgba(0, 0, 0, 0.05) 9px
+      rgba(0, 0, 0, 0.15) 8px,
+      rgba(0, 0, 0, 0.15) 9px
     ),
     repeating-linear-gradient(
       90deg,
       transparent,
       transparent 8px,
-      rgba(0, 0, 0, 0.05) 8px,
-      rgba(0, 0, 0, 0.05) 9px
+      rgba(0, 0, 0, 0.15) 8px,
+      rgba(0, 0, 0, 0.15) 9px
     );
-  pointer-events: none;
+  border: 3px solid var(--mc-shadow);
+  border-top-color: var(--mc-stone-light);
+  border-left-color: var(--mc-stone-light);
+  border-bottom-color: var(--mc-stone-dark);
+  border-right-color: var(--mc-stone-dark);
+  padding: var(--mc-space-2);
+  text-align: center;
+  position: relative;
+  transition: transform 0.05s;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.4);
 }
 
 .stat-card:hover {
-  transform: translate(-1px, -1px);
+  transform: translate(-2px, -2px);
   box-shadow:
-    inset 0 0 0 1px rgba(0, 0, 0, 0.3),
+    inset 0 0 0 1px rgba(0, 0, 0, 0.4),
     2px 2px 0 var(--mc-shadow);
 }
 
@@ -255,7 +356,9 @@ main {
   font-family: var(--mc-font);
   font-size: 32px;
   color: var(--mc-text-white);
-  text-shadow: 2px 2px 0 var(--mc-shadow);
+  text-shadow:
+    2px 2px 0 var(--mc-shadow),
+    3px 3px 0 rgba(0, 0, 0, 0.3);
   margin-bottom: var(--mc-space-1);
   position: relative;
   z-index: 1;
@@ -269,12 +372,46 @@ main {
   letter-spacing: 0px;
   position: relative;
   z-index: 1;
+  text-shadow: 1px 1px 0 var(--mc-shadow);
 }
 
-/* Win Stat - Emerald */
+/* Win Stat - Emerald Block */
 .stat-card.win {
-  background: #1a4d2e;
+  background: var(--mc-emerald-dark);
+  background-image:
+    repeating-linear-gradient(
+      37deg,
+      transparent 0px,
+      rgba(0, 0, 0, 0.2) 1px,
+      transparent 2px,
+      rgba(255, 255, 255, 0.1) 3px,
+      transparent 5px
+    ),
+    repeating-linear-gradient(
+      143deg,
+      transparent 0px,
+      rgba(0, 0, 0, 0.15) 1px,
+      transparent 3px,
+      rgba(255, 255, 255, 0.08) 4px,
+      transparent 7px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 8px,
+      rgba(0, 0, 0, 0.2) 8px,
+      rgba(0, 0, 0, 0.2) 9px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 8px,
+      rgba(0, 0, 0, 0.2) 8px,
+      rgba(0, 0, 0, 0.2) 9px
+    );
   border-color: var(--mc-emerald);
+  border-top-color: var(--mc-emerald);
+  border-left-color: var(--mc-emerald);
   animation: emerald-pulse 2s ease-in-out infinite;
 }
 
@@ -282,10 +419,43 @@ main {
   color: var(--mc-emerald);
 }
 
-/* Loss Stat - Redstone */
+/* Loss Stat - Redstone Block */
 .stat-card.loss {
-  background: #4d1a1a;
+  background: var(--mc-redstone-dark);
+  background-image:
+    repeating-linear-gradient(
+      37deg,
+      transparent 0px,
+      rgba(0, 0, 0, 0.2) 1px,
+      transparent 2px,
+      rgba(255, 255, 255, 0.1) 3px,
+      transparent 5px
+    ),
+    repeating-linear-gradient(
+      143deg,
+      transparent 0px,
+      rgba(0, 0, 0, 0.15) 1px,
+      transparent 3px,
+      rgba(255, 255, 255, 0.08) 4px,
+      transparent 7px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 8px,
+      rgba(0, 0, 0, 0.2) 8px,
+      rgba(0, 0, 0, 0.2) 9px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 8px,
+      rgba(0, 0, 0, 0.2) 8px,
+      rgba(0, 0, 0, 0.2) 9px
+    );
   border-color: var(--mc-redstone);
+  border-top-color: var(--mc-redstone);
+  border-left-color: var(--mc-redstone);
   animation: redstone-pulse 2s ease-in-out infinite;
 }
 
@@ -295,30 +465,30 @@ main {
 
 @keyframes emerald-pulse {
   0%, 100% {
-    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.3);
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.4);
   }
   50% {
     box-shadow:
-      inset 0 0 0 1px rgba(0, 0, 0, 0.3),
-      0 0 8px var(--mc-emerald),
-      inset 0 0 8px rgba(80, 200, 120, 0.2);
+      inset 0 0 0 1px rgba(0, 0, 0, 0.4),
+      0 0 12px var(--mc-emerald),
+      inset 0 0 12px rgba(80, 200, 120, 0.3);
   }
 }
 
 @keyframes redstone-pulse {
   0%, 100% {
-    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.3);
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.4);
   }
   50% {
     box-shadow:
-      inset 0 0 0 1px rgba(0, 0, 0, 0.3),
-      0 0 8px var(--mc-redstone),
-      inset 0 0 8px rgba(255, 0, 0, 0.2);
+      inset 0 0 0 1px rgba(0, 0, 0, 0.4),
+      0 0 12px var(--mc-redstone),
+      inset 0 0 12px rgba(255, 0, 0, 0.3);
   }
 }
 
 /* ==================
-   STREAK - XP BAR STYLE
+   STREAK CARD
    ================== */
 
 .streak-section {
@@ -328,9 +498,27 @@ main {
 
 .streak-card {
   background: var(--mc-planks);
-  border: 2px solid var(--mc-shadow);
-  border-top-color: rgba(255, 255, 255, 0.3);
-  border-left-color: rgba(255, 255, 255, 0.3);
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent 0px,
+      rgba(0, 0, 0, 0.1) 1px,
+      transparent 3px,
+      rgba(188, 142, 106, 0.2) 4px,
+      transparent 7px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      var(--mc-planks),
+      var(--mc-planks) 30px,
+      var(--mc-planks-dark) 30px,
+      var(--mc-planks-dark) 32px
+    );
+  border: 3px solid var(--mc-shadow);
+  border-top-color: var(--mc-planks-light);
+  border-left-color: var(--mc-planks-light);
+  border-bottom-color: var(--mc-planks-dark);
+  border-right-color: var(--mc-planks-dark);
   padding: var(--mc-space-2) var(--mc-space-3);
   display: flex;
   align-items: center;
@@ -350,7 +538,7 @@ main {
   font-family: var(--mc-font);
   font-size: 16px;
   font-weight: bold;
-  text-shadow: 1px 1px 0 var(--mc-shadow);
+  text-shadow: 2px 2px 0 var(--mc-shadow);
 }
 
 .streak-card.win-streak .streak-value {
@@ -362,7 +550,7 @@ main {
 }
 
 /* ==================
-   PANELS - MC UI PANELS
+   PANELS - DIRT BLOCKS
    ================== */
 
 .filter-section,
@@ -370,41 +558,48 @@ main {
 .matches-section,
 .form-section {
   background: var(--mc-dirt);
-  border: 2px solid var(--mc-shadow);
-  border-top-color: rgba(255, 255, 255, 0.2);
-  border-left-color: rgba(255, 255, 255, 0.2);
-  padding: var(--mc-space-3);
-  position: relative;
-  box-shadow: 0 4px 0 var(--mc-shadow);
-}
-
-/* Dirt texture pattern */
-.filter-section::before,
-.chart-section::before,
-.matches-section::before,
-.form-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
   background-image:
+    /* Dirt texture - very noisy */
     repeating-linear-gradient(
-      45deg,
-      transparent,
-      transparent 16px,
-      rgba(0, 0, 0, 0.05) 16px,
-      rgba(0, 0, 0, 0.05) 17px
+      23deg,
+      transparent 0px,
+      rgba(0, 0, 0, 0.15) 1px,
+      transparent 2px,
+      rgba(156, 118, 72, 0.3) 3px,
+      transparent 4px,
+      rgba(0, 0, 0, 0.1) 5px,
+      transparent 7px,
+      rgba(122, 88, 55, 0.2) 8px,
+      transparent 10px
     ),
     repeating-linear-gradient(
-      -45deg,
-      transparent,
-      transparent 16px,
-      rgba(0, 0, 0, 0.05) 16px,
-      rgba(0, 0, 0, 0.05) 17px
+      67deg,
+      transparent 0px,
+      rgba(0, 0, 0, 0.12) 1px,
+      transparent 3px,
+      rgba(156, 118, 72, 0.25) 4px,
+      transparent 6px,
+      rgba(0, 0, 0, 0.08) 7px,
+      transparent 9px
+    ),
+    repeating-linear-gradient(
+      157deg,
+      transparent 0px,
+      rgba(122, 88, 55, 0.2) 1px,
+      transparent 4px,
+      rgba(0, 0, 0, 0.1) 5px,
+      transparent 8px
     );
-  pointer-events: none;
+  border: 3px solid var(--mc-shadow);
+  border-top-color: var(--mc-dirt-light);
+  border-left-color: var(--mc-dirt-light);
+  border-bottom-color: var(--mc-dirt-dark);
+  border-right-color: var(--mc-dirt-dark);
+  padding: var(--mc-space-3);
+  position: relative;
+  box-shadow:
+    0 4px 0 var(--mc-shadow),
+    inset 0 0 0 1px rgba(0, 0, 0, 0.3);
 }
 
 .chart-section h2,
@@ -413,7 +608,9 @@ main {
   font-family: var(--mc-font);
   font-size: 14px;
   color: var(--mc-text-white);
-  text-shadow: 2px 2px 0 var(--mc-shadow);
+  text-shadow:
+    2px 2px 0 var(--mc-shadow),
+    3px 3px 0 rgba(0, 0, 0, 0.3);
   margin-bottom: var(--mc-space-2);
   letter-spacing: 0px;
   position: relative;
@@ -451,15 +648,15 @@ main {
   background: var(--mc-obsidian);
   border: 2px solid var(--mc-shadow);
   color: var(--mc-text-white);
-  box-shadow: inset 2px 2px 0 rgba(0, 0, 0, 0.8);
+  box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.9);
 }
 
 .filter-controls input[type="date"]:focus {
   outline: none;
   border-color: var(--mc-diamond);
   box-shadow:
-    inset 2px 2px 0 rgba(0, 0, 0, 0.8),
-    0 0 0 1px var(--mc-diamond);
+    inset 2px 2px 4px rgba(0, 0, 0, 0.9),
+    0 0 0 2px var(--mc-diamond);
 }
 
 /* ==================
@@ -469,7 +666,7 @@ main {
 #stats-chart {
   position: relative;
   z-index: 1;
-  filter: contrast(1.1) saturate(1.2);
+  filter: contrast(1.2) saturate(1.3);
 }
 
 /* ==================
@@ -486,9 +683,28 @@ main {
 
 .match-item {
   background: var(--mc-stone);
+  background-image:
+    repeating-linear-gradient(
+      37deg,
+      transparent 0px,
+      rgba(0, 0, 0, 0.1) 1px,
+      transparent 3px,
+      rgba(255, 255, 255, 0.05) 4px,
+      transparent 7px
+    ),
+    repeating-linear-gradient(
+      143deg,
+      transparent 0px,
+      rgba(0, 0, 0, 0.08) 1px,
+      transparent 4px,
+      rgba(255, 255, 255, 0.04) 5px,
+      transparent 9px
+    );
   border: 2px solid var(--mc-shadow);
-  border-top-color: rgba(255, 255, 255, 0.2);
-  border-left-color: rgba(255, 255, 255, 0.2);
+  border-top-color: var(--mc-stone-light);
+  border-left-color: var(--mc-stone-light);
+  border-bottom-color: var(--mc-stone-dark);
+  border-right-color: var(--mc-stone-dark);
   padding: var(--mc-space-2);
   display: grid;
   grid-template-columns: auto 1fr auto auto auto;
@@ -496,13 +712,13 @@ main {
   align-items: center;
   transition: transform 0.05s;
   position: relative;
-  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.3);
 }
 
 .match-item:hover {
-  transform: translate(-1px, -1px);
+  transform: translate(-2px, -2px);
   box-shadow:
-    inset 0 0 0 1px rgba(0, 0, 0, 0.2),
+    inset 0 0 0 1px rgba(0, 0, 0, 0.3),
     2px 2px 0 var(--mc-shadow);
 }
 
@@ -514,27 +730,27 @@ main {
   text-transform: uppercase;
   font-weight: bold;
   text-shadow: 1px 1px 0 var(--mc-shadow);
-  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.4);
 }
 
 .match-result-badge.win {
   background: var(--mc-emerald);
-  border-top-color: rgba(255, 255, 255, 0.3);
-  border-left-color: rgba(255, 255, 255, 0.3);
+  border-top-color: rgba(255, 255, 255, 0.4);
+  border-left-color: rgba(255, 255, 255, 0.4);
   color: var(--mc-text-white);
 }
 
 .match-result-badge.loss {
   background: var(--mc-redstone);
-  border-top-color: rgba(255, 255, 255, 0.3);
-  border-left-color: rgba(255, 255, 255, 0.3);
+  border-top-color: rgba(255, 255, 255, 0.4);
+  border-left-color: rgba(255, 255, 255, 0.4);
   color: var(--mc-text-white);
 }
 
 .match-result-badge.inconclusive {
   background: var(--mc-cobble);
-  border-top-color: rgba(255, 255, 255, 0.3);
-  border-left-color: rgba(255, 255, 255, 0.3);
+  border-top-color: var(--mc-stone-light);
+  border-left-color: var(--mc-stone-light);
   color: var(--mc-text-white);
 }
 
@@ -568,9 +784,20 @@ main {
   font-size: 16px;
   padding: 6px;
   background: var(--mc-redstone);
+  background-image:
+    repeating-linear-gradient(
+      45deg,
+      transparent 0px,
+      rgba(0, 0, 0, 0.2) 1px,
+      transparent 3px,
+      rgba(255, 255, 255, 0.1) 4px,
+      transparent 6px
+    );
   border: 2px solid var(--mc-shadow);
-  border-top-color: rgba(255, 255, 255, 0.3);
-  border-left-color: rgba(255, 255, 255, 0.3);
+  border-top-color: rgba(255, 255, 255, 0.4);
+  border-left-color: rgba(255, 255, 255, 0.4);
+  border-bottom-color: var(--mc-redstone-dark);
+  border-right-color: var(--mc-redstone-dark);
   cursor: pointer;
   transition: none;
   line-height: 1;
@@ -579,23 +806,23 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.4);
 }
 
 .match-delete-btn:hover {
-  transform: translate(-1px, -1px);
+  transform: translate(-2px, -2px);
   box-shadow:
-    inset 0 0 0 1px rgba(0, 0, 0, 0.3),
+    inset 0 0 0 1px rgba(0, 0, 0, 0.4),
     2px 2px 0 var(--mc-shadow);
 }
 
 .match-delete-btn:active {
-  transform: translate(1px, 1px);
-  border-top-color: var(--mc-shadow);
-  border-left-color: var(--mc-shadow);
-  border-bottom-color: rgba(255, 255, 255, 0.3);
-  border-right-color: rgba(255, 255, 255, 0.3);
-  box-shadow: inset 2px 2px 0 rgba(0, 0, 0, 0.5);
+  transform: translate(2px, 2px);
+  border-top-color: var(--mc-redstone-dark);
+  border-left-color: var(--mc-redstone-dark);
+  border-bottom-color: rgba(255, 255, 255, 0.4);
+  border-right-color: rgba(255, 255, 255, 0.4);
+  box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.6);
 }
 
 /* ==================
@@ -634,7 +861,7 @@ main {
   background: var(--mc-obsidian);
   border: 2px solid var(--mc-shadow);
   color: var(--mc-text-white);
-  box-shadow: inset 2px 2px 0 rgba(0, 0, 0, 0.8);
+  box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.9);
   transition: none;
 }
 
@@ -643,8 +870,8 @@ main {
   outline: none;
   border-color: var(--mc-diamond);
   box-shadow:
-    inset 2px 2px 0 rgba(0, 0, 0, 0.8),
-    0 0 0 1px var(--mc-diamond);
+    inset 2px 2px 4px rgba(0, 0, 0, 0.9),
+    0 0 0 2px var(--mc-diamond);
 }
 
 .form-group small {
@@ -667,65 +894,99 @@ main {
   font-family: var(--mc-font);
   font-size: 12px;
   padding: var(--mc-space-2);
-  border: 2px solid var(--mc-shadow);
+  border: 3px solid var(--mc-shadow);
   font-weight: bold;
   cursor: pointer;
   transition: none;
   text-transform: uppercase;
   text-shadow: 1px 1px 0 var(--mc-shadow);
   text-align: center;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.3);
 }
 
 .result-btn:hover {
-  transform: translate(-1px, -1px);
-  box-shadow: 2px 2px 0 var(--mc-shadow);
+  transform: translate(-2px, -2px);
+  box-shadow:
+    inset 0 0 0 1px rgba(0, 0, 0, 0.3),
+    2px 2px 0 var(--mc-shadow);
 }
 
 .result-btn:active {
-  transform: translate(1px, 1px);
-  border-top-color: var(--mc-shadow);
-  border-left-color: var(--mc-shadow);
-  box-shadow: inset 2px 2px 0 rgba(0, 0, 0, 0.5);
+  transform: translate(2px, 2px);
+  box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.6);
 }
 
 .result-btn.win {
   background: var(--mc-emerald);
-  border-top-color: rgba(255, 255, 255, 0.3);
-  border-left-color: rgba(255, 255, 255, 0.3);
+  background-image:
+    repeating-linear-gradient(
+      45deg,
+      transparent 0px,
+      rgba(0, 0, 0, 0.15) 1px,
+      transparent 3px,
+      rgba(255, 255, 255, 0.08) 4px,
+      transparent 6px
+    );
+  border-top-color: rgba(255, 255, 255, 0.4);
+  border-left-color: rgba(255, 255, 255, 0.4);
+  border-bottom-color: var(--mc-emerald-dark);
+  border-right-color: var(--mc-emerald-dark);
   color: var(--mc-text-white);
 }
 
 .result-btn.win.selected {
-  border: 3px solid var(--mc-text-white);
+  border: 4px solid var(--mc-text-white);
   box-shadow:
-    0 0 8px var(--mc-emerald),
-    inset 0 0 8px rgba(255, 255, 255, 0.2);
+    0 0 12px var(--mc-emerald),
+    inset 0 0 12px rgba(255, 255, 255, 0.3);
 }
 
 .result-btn.loss {
   background: var(--mc-redstone);
-  border-top-color: rgba(255, 255, 255, 0.3);
-  border-left-color: rgba(255, 255, 255, 0.3);
+  background-image:
+    repeating-linear-gradient(
+      45deg,
+      transparent 0px,
+      rgba(0, 0, 0, 0.15) 1px,
+      transparent 3px,
+      rgba(255, 255, 255, 0.08) 4px,
+      transparent 6px
+    );
+  border-top-color: rgba(255, 255, 255, 0.4);
+  border-left-color: rgba(255, 255, 255, 0.4);
+  border-bottom-color: var(--mc-redstone-dark);
+  border-right-color: var(--mc-redstone-dark);
   color: var(--mc-text-white);
 }
 
 .result-btn.loss.selected {
-  border: 3px solid var(--mc-text-white);
+  border: 4px solid var(--mc-text-white);
   box-shadow:
-    0 0 8px var(--mc-redstone),
-    inset 0 0 8px rgba(255, 255, 255, 0.2);
+    0 0 12px var(--mc-redstone),
+    inset 0 0 12px rgba(255, 255, 255, 0.3);
 }
 
 .result-btn.inconclusive {
   background: var(--mc-cobble);
-  border-top-color: rgba(255, 255, 255, 0.3);
-  border-left-color: rgba(255, 255, 255, 0.3);
+  background-image:
+    repeating-linear-gradient(
+      37deg,
+      transparent 0px,
+      rgba(0, 0, 0, 0.1) 1px,
+      transparent 3px,
+      rgba(255, 255, 255, 0.05) 4px,
+      transparent 6px
+    );
+  border-top-color: var(--mc-stone-light);
+  border-left-color: var(--mc-stone-light);
+  border-bottom-color: var(--mc-stone-dark);
+  border-right-color: var(--mc-stone-dark);
   color: var(--mc-text-white);
 }
 
 .result-btn.inconclusive.selected {
-  border: 3px solid var(--mc-text-white);
-  box-shadow: inset 0 0 8px rgba(255, 255, 255, 0.2);
+  border: 4px solid var(--mc-text-white);
+  box-shadow: inset 0 0 12px rgba(255, 255, 255, 0.3);
 }
 
 /* ==================
@@ -736,7 +997,7 @@ main {
   font-family: var(--mc-font);
   font-size: 12px;
   padding: var(--mc-space-1) var(--mc-space-2);
-  border: 2px solid var(--mc-shadow);
+  border: 3px solid var(--mc-shadow);
   cursor: pointer;
   text-transform: uppercase;
   transition: none;
@@ -745,69 +1006,108 @@ main {
   font-weight: bold;
   text-align: center;
   text-shadow: 1px 1px 0 var(--mc-shadow);
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.3);
 }
 
 .btn-primary {
   background: var(--mc-emerald);
-  border-top-color: rgba(255, 255, 255, 0.3);
-  border-left-color: rgba(255, 255, 255, 0.3);
+  background-image:
+    repeating-linear-gradient(
+      45deg,
+      transparent 0px,
+      rgba(0, 0, 0, 0.15) 1px,
+      transparent 3px,
+      rgba(255, 255, 255, 0.08) 4px,
+      transparent 6px
+    );
+  border-top-color: rgba(255, 255, 255, 0.4);
+  border-left-color: rgba(255, 255, 255, 0.4);
+  border-bottom-color: var(--mc-emerald-dark);
+  border-right-color: var(--mc-emerald-dark);
   color: var(--mc-text-white);
 }
 
 .btn-primary:hover {
-  transform: translate(-1px, -1px);
-  box-shadow: 2px 2px 0 var(--mc-shadow);
+  transform: translate(-2px, -2px);
+  box-shadow:
+    inset 0 0 0 1px rgba(0, 0, 0, 0.3),
+    2px 2px 0 var(--mc-shadow);
 }
 
 .btn-primary:active {
-  transform: translate(1px, 1px);
-  border-top-color: var(--mc-shadow);
-  border-left-color: var(--mc-shadow);
-  border-bottom-color: rgba(255, 255, 255, 0.3);
-  border-right-color: rgba(255, 255, 255, 0.3);
-  box-shadow: inset 2px 2px 0 rgba(0, 0, 0, 0.5);
+  transform: translate(2px, 2px);
+  border-top-color: var(--mc-emerald-dark);
+  border-left-color: var(--mc-emerald-dark);
+  border-bottom-color: rgba(255, 255, 255, 0.4);
+  border-right-color: rgba(255, 255, 255, 0.4);
+  box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.6);
 }
 
 .btn-secondary {
   background: var(--mc-stone);
-  border-top-color: rgba(255, 255, 255, 0.3);
-  border-left-color: rgba(255, 255, 255, 0.3);
+  background-image:
+    repeating-linear-gradient(
+      37deg,
+      transparent 0px,
+      rgba(0, 0, 0, 0.1) 1px,
+      transparent 3px,
+      rgba(255, 255, 255, 0.05) 4px,
+      transparent 6px
+    );
+  border-top-color: var(--mc-stone-light);
+  border-left-color: var(--mc-stone-light);
+  border-bottom-color: var(--mc-stone-dark);
+  border-right-color: var(--mc-stone-dark);
   color: var(--mc-text-white);
 }
 
 .btn-secondary:hover {
   background: var(--mc-cobble);
-  transform: translate(-1px, -1px);
-  box-shadow: 2px 2px 0 var(--mc-shadow);
+  transform: translate(-2px, -2px);
+  box-shadow:
+    inset 0 0 0 1px rgba(0, 0, 0, 0.3),
+    2px 2px 0 var(--mc-shadow);
 }
 
 .btn-secondary:active {
-  transform: translate(1px, 1px);
-  border-top-color: var(--mc-shadow);
-  border-left-color: var(--mc-shadow);
-  box-shadow: inset 2px 2px 0 rgba(0, 0, 0, 0.5);
+  transform: translate(2px, 2px);
+  border-top-color: var(--mc-stone-dark);
+  border-left-color: var(--mc-stone-dark);
+  box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.6);
 }
 
 .btn-success {
   background: var(--mc-gold);
-  border-top-color: rgba(255, 255, 255, 0.3);
-  border-left-color: rgba(255, 255, 255, 0.3);
+  background-image:
+    repeating-linear-gradient(
+      45deg,
+      transparent 0px,
+      rgba(0, 0, 0, 0.1) 1px,
+      transparent 3px,
+      rgba(255, 255, 255, 0.15) 4px,
+      transparent 6px
+    );
+  border-top-color: rgba(255, 255, 255, 0.5);
+  border-left-color: rgba(255, 255, 255, 0.5);
+  border-bottom-color: rgba(204, 189, 61, 1);
+  border-right-color: rgba(204, 189, 61, 1);
   color: var(--mc-text-dark);
   text-shadow: none;
 }
 
 .btn-success:hover {
-  transform: translate(-1px, -1px);
+  transform: translate(-2px, -2px);
   box-shadow:
+    inset 0 0 0 1px rgba(0, 0, 0, 0.3),
     2px 2px 0 var(--mc-shadow),
-    0 0 8px var(--mc-gold);
+    0 0 12px var(--mc-gold);
 }
 
 .btn-success:active {
-  transform: translate(1px, 1px);
-  border-top-color: var(--mc-shadow);
-  border-left-color: var(--mc-shadow);
-  box-shadow: inset 2px 2px 0 rgba(0, 0, 0, 0.3);
+  transform: translate(2px, 2px);
+  border-top-color: rgba(204, 189, 61, 1);
+  border-left-color: rgba(204, 189, 61, 1);
+  box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.4);
 }
 
 .form-actions {
@@ -821,7 +1121,7 @@ main {
 
 .message {
   padding: var(--mc-space-2);
-  border: 2px solid var(--mc-shadow);
+  border: 3px solid var(--mc-shadow);
   margin-top: var(--mc-space-2);
   font-family: var(--mc-font);
   font-size: 10px;
@@ -831,21 +1131,21 @@ main {
 }
 
 .message.success {
-  background: #1a4d2e;
+  background: var(--mc-emerald-dark);
   color: var(--mc-emerald);
   border-color: var(--mc-emerald);
-  border-top-color: rgba(255, 255, 255, 0.3);
-  border-left-color: rgba(255, 255, 255, 0.3);
-  box-shadow: 0 0 8px var(--mc-emerald);
+  border-top-color: rgba(255, 255, 255, 0.4);
+  border-left-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 0 12px var(--mc-emerald);
 }
 
 .message.error {
-  background: #4d1a1a;
+  background: var(--mc-redstone-dark);
   color: var(--mc-redstone);
   border-color: var(--mc-redstone);
-  border-top-color: rgba(255, 255, 255, 0.3);
-  border-left-color: rgba(255, 255, 255, 0.3);
-  box-shadow: 0 0 8px var(--mc-redstone);
+  border-top-color: rgba(255, 255, 255, 0.4);
+  border-left-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 0 12px var(--mc-redstone);
 }
 
 .message a {
@@ -915,17 +1215,5 @@ main {
   .matches-section h2,
   .form-section h2 {
     font-size: 12px;
-  }
-}
-
-/* ==================
-   MINECRAFT FONT FALLBACK
-   If Minecraft font doesn't load, this makes
-   Press Start 2P look more MC-like
-   ================== */
-
-@supports not (font-family: 'Minecraft') {
-  body {
-    letter-spacing: -0.5px;
   }
 }
