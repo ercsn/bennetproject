@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Match - Minecraft PvP Stats</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>⚔️ Minecraft PvP Stats</h1>
+            <nav>
+                <a href="/">Dashboard</a>
+                <a href="/add.html" class="active">Add Match</a>
+            </nav>
+        </header>
+
+        <main>
+            <section class="form-section">
+                <h2>Record a PvP Match</h2>
+
+                <form id="match-form" class="match-form">
+                    <div class="form-group">
+                        <label for="opponent">Opponent Name</label>
+                        <input
+                            type="text"
+                            id="opponent"
+                            name="opponent"
+                            required
+                            placeholder="Enter opponent's username"
+                            autocomplete="off"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label>Match Result</label>
+                        <div class="result-buttons">
+                            <button
+                                type="button"
+                                class="result-btn win"
+                                data-result="win"
+                                onclick="selectResult('win')"
+                            >
+                                ✓ Win
+                            </button>
+                            <button
+                                type="button"
+                                class="result-btn loss"
+                                data-result="loss"
+                                onclick="selectResult('loss')"
+                            >
+                                ✗ Loss
+                            </button>
+                            <button
+                                type="button"
+                                class="result-btn inconclusive"
+                                data-result="inconclusive"
+                                onclick="selectResult('inconclusive')"
+                            >
+                                ~ Inconclusive
+                            </button>
+                        </div>
+                        <input type="hidden" id="result" name="result" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="timestamp">Date & Time</label>
+                        <input
+                            type="datetime-local"
+                            id="timestamp"
+                            name="timestamp"
+                        >
+                        <small>Leave blank to use current time</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="notes">Notes (Optional)</label>
+                        <textarea
+                            id="notes"
+                            name="notes"
+                            rows="3"
+                            placeholder="Add any notes about the match..."
+                        ></textarea>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">Save Match</button>
+                        <button type="button" class="btn btn-secondary" onclick="resetForm()">Clear</button>
+                    </div>
+                </form>
+
+                <div id="success-message" class="message success" style="display: none;">
+                    Match saved successfully! <a href="/">View Dashboard</a>
+                </div>
+
+                <div id="error-message" class="message error" style="display: none;"></div>
+            </section>
+        </main>
+    </div>
+
+    <script src="/add.js"></script>
+</body>
+</html>

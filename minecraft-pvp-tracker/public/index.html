@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minecraft PvP Stats Tracker</title>
+    <link rel="stylesheet" href="/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>⚔️ Minecraft PvP Stats</h1>
+            <nav>
+                <a href="/" class="active">Dashboard</a>
+                <a href="/add.html">Add Match</a>
+            </nav>
+        </header>
+
+        <main>
+            <!-- Stats Overview -->
+            <section class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-value" id="total-matches">-</div>
+                    <div class="stat-label">Total Matches</div>
+                </div>
+                <div class="stat-card win">
+                    <div class="stat-value" id="total-wins">-</div>
+                    <div class="stat-label">Wins</div>
+                </div>
+                <div class="stat-card loss">
+                    <div class="stat-value" id="total-losses">-</div>
+                    <div class="stat-label">Losses</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="win-percentage">-</div>
+                    <div class="stat-label">Win Rate</div>
+                </div>
+            </section>
+
+            <!-- Current Streak -->
+            <section class="streak-section">
+                <div id="streak-display" class="streak-card" style="display: none;">
+                    <span class="streak-label">Current Streak:</span>
+                    <span class="streak-value" id="streak-value">-</span>
+                </div>
+            </section>
+
+            <!-- Date Range Filter -->
+            <section class="filter-section">
+                <div class="filter-controls">
+                    <label>
+                        Start Date:
+                        <input type="date" id="start-date">
+                    </label>
+                    <label>
+                        End Date:
+                        <input type="date" id="end-date">
+                    </label>
+                    <button onclick="applyFilter()" class="btn btn-secondary">Apply Filter</button>
+                    <button onclick="clearFilter()" class="btn btn-secondary">Clear</button>
+                    <button onclick="exportCSV()" class="btn btn-success">Export CSV</button>
+                </div>
+            </section>
+
+            <!-- Chart -->
+            <section class="chart-section">
+                <h2>Win Rate Over Time</h2>
+                <canvas id="stats-chart"></canvas>
+            </section>
+
+            <!-- Recent Matches -->
+            <section class="matches-section">
+                <h2>Recent Matches</h2>
+                <div id="matches-list" class="matches-list">
+                    <div class="loading">Loading matches...</div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="/dashboard.js"></script>
+</body>
+</html>

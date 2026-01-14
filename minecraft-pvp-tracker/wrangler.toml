@@ -1,0 +1,11 @@
+name = "minecraft-pvp-tracker"
+compatibility_date = "2024-01-01"
+
+# D1 database binding
+[[d1_databases]]
+binding = "DB"
+database_name = "minecraft-pvp-db"
+database_id = "your-database-id-here"
+
+# Pages configuration
+pages_build_output_dir = "public"

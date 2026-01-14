@@ -1,0 +1,23 @@
+{
+  "name": "minecraft-pvp-tracker",
+  "version": "1.0.0",
+  "description": "A simple Minecraft PvP stats tracker built with Cloudflare Pages and D1",
+  "scripts": {
+    "dev": "wrangler pages dev public",
+    "deploy": "wrangler pages deploy public --project-name=minecraft-pvp-tracker",
+    "db:create": "wrangler d1 create minecraft-pvp-db",
+    "db:init": "wrangler d1 execute minecraft-pvp-db --file=./schema.sql",
+    "db:query": "wrangler d1 execute minecraft-pvp-db --command",
+    "db:local": "wrangler d1 execute minecraft-pvp-db --local --file=./schema.sql"
+  },
+  "keywords": [
+    "minecraft",
+    "pvp",
+    "stats",
+    "cloudflare",
+    "d1",
+    "pages"
+  ],
+  "author": "",
+  "license": "MIT"
+}
