@@ -518,7 +518,7 @@ main {
   box-shadow: inset 2px 2px 0 rgba(0, 0, 0, 0.5), inset -2px -2px 0 rgba(255, 255, 255, 0.1);
   padding: var(--mc-space-md);
   display: grid;
-  grid-template-columns: auto 1fr auto auto;
+  grid-template-columns: auto 1fr auto auto auto;
   gap: var(--mc-space-md);
   align-items: center;
   transition: all 0.2s ease;
@@ -585,6 +585,40 @@ main {
   font-family: var(--mc-font-secondary);
   font-size: var(--mc-text-md);
   color: var(--mc-text-dim);
+}
+
+.match-delete-btn {
+  font-size: var(--mc-text-xl);
+  padding: var(--mc-space-sm);
+  background: linear-gradient(180deg, var(--mc-redstone) 0%, #aa0f2f 100%);
+  border: var(--mc-border-thin) solid #8a0a1a;
+  border-radius: var(--mc-radius-sm);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow:
+    inset -2px -2px 0 rgba(0, 0, 0, 0.5),
+    inset 2px 2px 0 rgba(255, 255, 255, 0.15);
+  line-height: 1;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.match-delete-btn:hover {
+  background: linear-gradient(180deg, #ff1a47 0%, var(--mc-redstone) 100%);
+  transform: translateY(-2px);
+  box-shadow:
+    inset -2px -2px 0 rgba(0, 0, 0, 0.5),
+    inset 2px 2px 0 rgba(255, 255, 255, 0.15),
+    0 4px 0 rgba(0, 0, 0, 0.5),
+    0 0 16px var(--mc-redstone-glow);
+}
+
+.match-delete-btn:active {
+  transform: translateY(1px);
+  box-shadow: inset 3px 3px 6px rgba(0, 0, 0, 0.7);
 }
 
 /* ==================
@@ -895,8 +929,13 @@ main {
   }
 
   .match-item {
-    grid-template-columns: 1fr;
+    grid-template-columns: auto 1fr auto;
     gap: var(--mc-space-sm);
+  }
+
+  .match-delete-btn {
+    grid-column: 3;
+    grid-row: 1 / -1;
   }
 
   .filter-controls {
