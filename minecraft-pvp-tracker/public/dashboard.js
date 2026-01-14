@@ -121,15 +121,33 @@ async function loadMatches(startDate = null, endDate = null, limit = 20) {
 
 function renderChart(chartData) {
     const ctx = document.getElementById('stats-chart');
+    const chartContainer = ctx.parentElement;
+    const noDataMessage = chartContainer.querySelector('.no-data-message');
 
     // Destroy existing chart if it exists
     if (chart) {
         chart.destroy();
+        chart = null;
     }
 
     if (!chartData || chartData.length === 0) {
-        ctx.parentElement.innerHTML = '<p class="loading">No data available for chart</p>';
+        // Hide canvas and show message
+        ctx.style.display = 'none';
+        if (!noDataMessage) {
+            const message = document.createElement('p');
+            message.className = 'loading no-data-message';
+            message.textContent = 'No data available for chart';
+            chartContainer.appendChild(message);
+        } else {
+            noDataMessage.style.display = 'block';
+        }
         return;
+    }
+
+    // Show canvas and hide message
+    ctx.style.display = 'block';
+    if (noDataMessage) {
+        noDataMessage.style.display = 'none';
     }
 
     chart = new Chart(ctx, {
