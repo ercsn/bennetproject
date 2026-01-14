@@ -52,8 +52,8 @@ export async function onRequestPost(context) {
         const { opponent_name, result, timestamp, notes } = body;
 
         // Validate required fields
-        if (!opponent_name || !result) {
-            return new Response(JSON.stringify({ error: 'Missing required fields' }), {
+        if (!result) {
+            return new Response(JSON.stringify({ error: 'Missing required field: result' }), {
                 status: 400,
                 headers: { 'Content-Type': 'application/json' }
             });
@@ -76,7 +76,7 @@ export async function onRequestPost(context) {
         `;
 
         const result_obj = await DB.prepare(query)
-            .bind(matchTimestamp, opponent_name, result, notes || null)
+            .bind(matchTimestamp, opponent_name || 'Unknown', result, notes || null)
             .run();
 
         return new Response(JSON.stringify({
@@ -97,12 +97,43 @@ export async function onRequestPost(context) {
     }
 }
 
+export async function onRequestDelete(context) {
+    try {
+        const { DB } = context.env;
+        const url = new URL(context.request.url);
+        const pathParts = url.pathname.split('/');
+        const matchId = pathParts[pathParts.length - 1];
+
+        if (!matchId || matchId === 'matches') {
+            return new Response(JSON.stringify({ error: 'Match ID required' }), {
+                status: 400,
+                headers: { 'Content-Type': 'application/json' }
+            });
+        }
+
+        const query = 'DELETE FROM matches WHERE id = ?';
+        await DB.prepare(query).bind(matchId).run();
+
+        return new Response(JSON.stringify({ success: true }), {
+            headers: {
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': '*'
+            }
+        });
+    } catch (error) {
+        return new Response(JSON.stringify({ error: error.message }), {
+            status: 500,
+            headers: { 'Content-Type': 'application/json' }
+        });
+    }
+}
+
 // Handle OPTIONS for CORS
 export async function onRequestOptions() {
     return new Response(null, {
         headers: {
             'Access-Control-Allow-Origin': '*',
-            'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
+            'Access-Control-Allow-Methods': 'GET, POST, DELETE, OPTIONS',
             'Access-Control-Allow-Headers': 'Content-Type'
         }
     });

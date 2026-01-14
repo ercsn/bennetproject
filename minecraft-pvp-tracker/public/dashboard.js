@@ -73,6 +73,9 @@ async function loadMatches(startDate = null, endDate = null, limit = 20) {
                     ${match.notes ? `<div class="match-notes">${escapeHtml(match.notes)}</div>` : ''}
                 </div>
                 <div class="match-timestamp">${formatDate(match.timestamp)}</div>
+                <button class="match-delete-btn" onclick="deleteMatch(${match.id})" title="Delete match">
+                    🗑️
+                </button>
             </div>
         `).join('');
     } catch (error) {
@@ -267,4 +270,27 @@ function escapeHtml(text) {
     const div = document.createElement('div');
     div.textContent = text;
     return div.innerHTML;
+}
+
+async function deleteMatch(matchId) {
+    if (!confirm('Are you sure you want to delete this match?')) {
+        return;
+    }
+
+    try {
+        const response = await fetch(`/api/matches/${matchId}`, {
+            method: 'DELETE'
+        });
+
+        if (response.ok) {
+            // Reload data after successful deletion
+            loadStats();
+            loadMatches();
+        } else {
+            const result = await response.json();
+            alert('Failed to delete match: ' + (result.error || 'Unknown error'));
+        }
+    } catch (error) {
+        alert('Network error: ' + error.message);
+    }
 }
