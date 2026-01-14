@@ -63,53 +63,17 @@
   image-rendering: crisp-edges;
 }
 
-/* Body - Deepslate/Stone Block Background */
+/* Body - Stone Block Background with Real Texture */
 body {
   font-family: var(--mc-font);
   background: var(--mc-deepslate);
-  background-image:
-    /* Noise pattern - like actual MC blocks */
-    repeating-linear-gradient(
-      0deg,
-      transparent 0px,
-      rgba(255, 255, 255, 0.02) 1px,
-      transparent 2px,
-      transparent 3px,
-      rgba(0, 0, 0, 0.03) 4px,
-      transparent 5px,
-      transparent 7px,
-      rgba(255, 255, 255, 0.01) 8px,
-      transparent 9px
-    ),
-    repeating-linear-gradient(
-      90deg,
-      transparent 0px,
-      rgba(255, 255, 255, 0.01) 1px,
-      transparent 2px,
-      rgba(0, 0, 0, 0.02) 3px,
-      transparent 4px,
-      transparent 6px,
-      rgba(255, 255, 255, 0.02) 7px,
-      transparent 8px,
-      transparent 10px,
-      rgba(0, 0, 0, 0.01) 11px,
-      transparent 12px
-    ),
-    /* 16x16 block grid */
-    repeating-linear-gradient(
-      0deg,
-      transparent,
-      transparent 16px,
-      rgba(255, 255, 255, 0.01) 16px,
-      rgba(255, 255, 255, 0.01) 17px
-    ),
-    repeating-linear-gradient(
-      90deg,
-      transparent,
-      transparent 16px,
-      rgba(255, 255, 255, 0.01) 16px,
-      rgba(255, 255, 255, 0.01) 17px
-    );
+  background-image: url('blocks.png');
+  background-size: 540px 270px; /* 10 blocks wide x 5 blocks tall at 54px per block */
+  background-position: -486px -216px; /* Stone block position */
+  background-repeat: repeat;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
   color: var(--mc-text-white);
   min-height: 100vh;
   line-height: 1.4;
@@ -129,47 +93,10 @@ body {
 
 header {
   background: var(--mc-planks);
-  background-image:
-    /* Wood texture noise */
-    repeating-linear-gradient(
-      0deg,
-      transparent 0px,
-      rgba(0, 0, 0, 0.08) 1px,
-      transparent 2px,
-      rgba(107, 68, 35, 0.3) 3px,
-      transparent 4px,
-      rgba(0, 0, 0, 0.05) 5px,
-      transparent 7px,
-      rgba(188, 142, 106, 0.2) 8px,
-      transparent 10px
-    ),
-    repeating-linear-gradient(
-      90deg,
-      transparent 0px,
-      rgba(0, 0, 0, 0.06) 1px,
-      transparent 3px,
-      rgba(107, 68, 35, 0.2) 4px,
-      transparent 6px,
-      rgba(188, 142, 106, 0.15) 7px,
-      transparent 9px,
-      rgba(0, 0, 0, 0.04) 11px,
-      transparent 13px
-    ),
-    /* Plank lines */
-    repeating-linear-gradient(
-      90deg,
-      var(--mc-planks),
-      var(--mc-planks) 30px,
-      var(--mc-planks-dark) 30px,
-      var(--mc-planks-dark) 32px
-    ),
-    repeating-linear-gradient(
-      0deg,
-      transparent,
-      transparent 15px,
-      rgba(0, 0, 0, 0.15) 15px,
-      rgba(0, 0, 0, 0.15) 16px
-    );
+  background-image: url('blocks.png');
+  background-size: 540px 270px;
+  background-position: -216px -216px; /* Oak Planks - row 4, col 4 */
+  background-repeat: repeat;
   border: 3px solid var(--mc-shadow);
   border-top-color: var(--mc-planks-light);
   border-left-color: var(--mc-planks-light);
@@ -233,15 +160,10 @@ header h1 {
 
 .quick-entry .result-btn.win {
   background: var(--mc-emerald);
-  background-image:
-    repeating-linear-gradient(
-      45deg,
-      transparent 0px,
-      rgba(0, 0, 0, 0.15) 1px,
-      transparent 3px,
-      rgba(255, 255, 255, 0.08) 4px,
-      transparent 6px
-    );
+  background-image: url('blocks.png');
+  background-size: 540px 270px;
+  background-position: -378px -54px; /* Lime/Green block - row 1, col 7 */
+  background-repeat: repeat;
   border-top-color: rgba(255, 255, 255, 0.4);
   border-left-color: rgba(255, 255, 255, 0.4);
   border-bottom-color: var(--mc-emerald-dark);
@@ -251,15 +173,10 @@ header h1 {
 
 .quick-entry .result-btn.loss {
   background: var(--mc-redstone);
-  background-image:
-    repeating-linear-gradient(
-      45deg,
-      transparent 0px,
-      rgba(0, 0, 0, 0.15) 1px,
-      transparent 3px,
-      rgba(255, 255, 255, 0.08) 4px,
-      transparent 6px
-    );
+  background-image: url('blocks.png');
+  background-size: 540px 270px;
+  background-position: -432px -108px; /* Red block - row 2, col 8 */
+  background-repeat: repeat;
   border-top-color: rgba(255, 255, 255, 0.4);
   border-left-color: rgba(255, 255, 255, 0.4);
   border-bottom-color: var(--mc-redstone-dark);
@@ -269,15 +186,10 @@ header h1 {
 
 .quick-entry .result-btn.inconclusive {
   background: var(--mc-cobble);
-  background-image:
-    repeating-linear-gradient(
-      37deg,
-      transparent 0px,
-      rgba(0, 0, 0, 0.1) 1px,
-      transparent 3px,
-      rgba(255, 255, 255, 0.05) 4px,
-      transparent 6px
-    );
+  background-image: url('blocks.png');
+  background-size: 540px 270px;
+  background-position: -486px -216px; /* Stone - row 4, col 9 */
+  background-repeat: repeat;
   border-top-color: var(--mc-stone-light);
   border-left-color: var(--mc-stone-light);
   border-bottom-color: var(--mc-stone-dark);
@@ -295,15 +207,10 @@ header h1 {
   left: 50%;
   transform: translateX(-50%);
   background: var(--mc-emerald);
-  background-image:
-    repeating-linear-gradient(
-      45deg,
-      transparent 0px,
-      rgba(0, 0, 0, 0.15) 1px,
-      transparent 3px,
-      rgba(255, 255, 255, 0.1) 4px,
-      transparent 6px
-    );
+  background-image: url('blocks.png');
+  background-size: 540px 270px;
+  background-position: -378px -54px; /* Lime/Green block - row 1, col 7 */
+  background-repeat: repeat;
   border: 3px solid var(--mc-shadow);
   border-top-color: rgba(255, 255, 255, 0.4);
   border-left-color: rgba(255, 255, 255, 0.4);
@@ -355,45 +262,10 @@ main {
 
 .stat-card {
   background: var(--mc-stone);
-  background-image:
-    /* Stone block texture - very noisy like actual MC */
-    repeating-linear-gradient(
-      37deg,
-      transparent 0px,
-      rgba(0, 0, 0, 0.12) 1px,
-      transparent 2px,
-      rgba(255, 255, 255, 0.06) 3px,
-      transparent 4px,
-      rgba(0, 0, 0, 0.08) 5px,
-      transparent 7px,
-      rgba(255, 255, 255, 0.04) 8px,
-      transparent 10px
-    ),
-    repeating-linear-gradient(
-      143deg,
-      transparent 0px,
-      rgba(0, 0, 0, 0.1) 1px,
-      transparent 3px,
-      rgba(255, 255, 255, 0.05) 4px,
-      transparent 6px,
-      rgba(0, 0, 0, 0.07) 7px,
-      transparent 9px
-    ),
-    /* 8x8 pixel grid like inventory slot */
-    repeating-linear-gradient(
-      0deg,
-      transparent,
-      transparent 8px,
-      rgba(0, 0, 0, 0.15) 8px,
-      rgba(0, 0, 0, 0.15) 9px
-    ),
-    repeating-linear-gradient(
-      90deg,
-      transparent,
-      transparent 8px,
-      rgba(0, 0, 0, 0.15) 8px,
-      rgba(0, 0, 0, 0.15) 9px
-    );
+  background-image: url('blocks.png');
+  background-size: 540px 270px;
+  background-position: -486px -216px; /* Stone - row 4, col 9 */
+  background-repeat: repeat;
   border: 3px solid var(--mc-shadow);
   border-top-color: var(--mc-stone-light);
   border-left-color: var(--mc-stone-light);
@@ -436,40 +308,13 @@ main {
   text-shadow: 1px 1px 0 var(--mc-shadow);
 }
 
-/* Win Stat - Emerald Block */
+/* Win Stat - Emerald Ore */
 .stat-card.win {
   background: var(--mc-emerald-dark);
-  background-image:
-    repeating-linear-gradient(
-      37deg,
-      transparent 0px,
-      rgba(0, 0, 0, 0.2) 1px,
-      transparent 2px,
-      rgba(255, 255, 255, 0.1) 3px,
-      transparent 5px
-    ),
-    repeating-linear-gradient(
-      143deg,
-      transparent 0px,
-      rgba(0, 0, 0, 0.15) 1px,
-      transparent 3px,
-      rgba(255, 255, 255, 0.08) 4px,
-      transparent 7px
-    ),
-    repeating-linear-gradient(
-      0deg,
-      transparent,
-      transparent 8px,
-      rgba(0, 0, 0, 0.2) 8px,
-      rgba(0, 0, 0, 0.2) 9px
-    ),
-    repeating-linear-gradient(
-      90deg,
-      transparent,
-      transparent 8px,
-      rgba(0, 0, 0, 0.2) 8px,
-      rgba(0, 0, 0, 0.2) 9px
-    );
+  background-image: url('blocks.png');
+  background-size: 540px 270px;
+  background-position: -324px -162px; /* Emerald Ore - row 3, col 6 */
+  background-repeat: repeat;
   border-color: var(--mc-emerald);
   border-top-color: var(--mc-emerald);
   border-left-color: var(--mc-emerald);
@@ -480,40 +325,13 @@ main {
   color: var(--mc-emerald);
 }
 
-/* Loss Stat - Redstone Block */
+/* Loss Stat - Redstone Ore */
 .stat-card.loss {
   background: var(--mc-redstone-dark);
-  background-image:
-    repeating-linear-gradient(
-      37deg,
-      transparent 0px,
-      rgba(0, 0, 0, 0.2) 1px,
-      transparent 2px,
-      rgba(255, 255, 255, 0.1) 3px,
-      transparent 5px
-    ),
-    repeating-linear-gradient(
-      143deg,
-      transparent 0px,
-      rgba(0, 0, 0, 0.15) 1px,
-      transparent 3px,
-      rgba(255, 255, 255, 0.08) 4px,
-      transparent 7px
-    ),
-    repeating-linear-gradient(
-      0deg,
-      transparent,
-      transparent 8px,
-      rgba(0, 0, 0, 0.2) 8px,
-      rgba(0, 0, 0, 0.2) 9px
-    ),
-    repeating-linear-gradient(
-      90deg,
-      transparent,
-      transparent 8px,
-      rgba(0, 0, 0, 0.2) 8px,
-      rgba(0, 0, 0, 0.2) 9px
-    );
+  background-image: url('blocks.png');
+  background-size: 540px 270px;
+  background-position: -432px -162px; /* Redstone Ore - row 3, col 8 */
+  background-repeat: repeat;
   border-color: var(--mc-redstone);
   border-top-color: var(--mc-redstone);
   border-left-color: var(--mc-redstone);
@@ -559,22 +377,10 @@ main {
 
 .streak-card {
   background: var(--mc-planks);
-  background-image:
-    repeating-linear-gradient(
-      0deg,
-      transparent 0px,
-      rgba(0, 0, 0, 0.1) 1px,
-      transparent 3px,
-      rgba(188, 142, 106, 0.2) 4px,
-      transparent 7px
-    ),
-    repeating-linear-gradient(
-      90deg,
-      var(--mc-planks),
-      var(--mc-planks) 30px,
-      var(--mc-planks-dark) 30px,
-      var(--mc-planks-dark) 32px
-    );
+  background-image: url('blocks.png');
+  background-size: 540px 270px;
+  background-position: -216px -216px; /* Oak Planks - row 4, col 4 */
+  background-repeat: repeat;
   border: 3px solid var(--mc-shadow);
   border-top-color: var(--mc-planks-light);
   border-left-color: var(--mc-planks-light);
@@ -619,38 +425,10 @@ main {
 .matches-section,
 .form-section {
   background: var(--mc-dirt);
-  background-image:
-    /* Dirt texture - very noisy */
-    repeating-linear-gradient(
-      23deg,
-      transparent 0px,
-      rgba(0, 0, 0, 0.15) 1px,
-      transparent 2px,
-      rgba(156, 118, 72, 0.3) 3px,
-      transparent 4px,
-      rgba(0, 0, 0, 0.1) 5px,
-      transparent 7px,
-      rgba(122, 88, 55, 0.2) 8px,
-      transparent 10px
-    ),
-    repeating-linear-gradient(
-      67deg,
-      transparent 0px,
-      rgba(0, 0, 0, 0.12) 1px,
-      transparent 3px,
-      rgba(156, 118, 72, 0.25) 4px,
-      transparent 6px,
-      rgba(0, 0, 0, 0.08) 7px,
-      transparent 9px
-    ),
-    repeating-linear-gradient(
-      157deg,
-      transparent 0px,
-      rgba(122, 88, 55, 0.2) 1px,
-      transparent 4px,
-      rgba(0, 0, 0, 0.1) 5px,
-      transparent 8px
-    );
+  background-image: url('blocks.png');
+  background-size: 540px 270px;
+  background-position: -108px -216px; /* Dirt - row 4, col 2 */
+  background-repeat: repeat;
   border: 3px solid var(--mc-shadow);
   border-top-color: var(--mc-dirt-light);
   border-left-color: var(--mc-dirt-light);
@@ -744,23 +522,10 @@ main {
 
 .match-item {
   background: var(--mc-stone);
-  background-image:
-    repeating-linear-gradient(
-      37deg,
-      transparent 0px,
-      rgba(0, 0, 0, 0.1) 1px,
-      transparent 3px,
-      rgba(255, 255, 255, 0.05) 4px,
-      transparent 7px
-    ),
-    repeating-linear-gradient(
-      143deg,
-      transparent 0px,
-      rgba(0, 0, 0, 0.08) 1px,
-      transparent 4px,
-      rgba(255, 255, 255, 0.04) 5px,
-      transparent 9px
-    );
+  background-image: url('blocks.png');
+  background-size: 540px 270px;
+  background-position: -486px -216px; /* Stone - row 4, col 9 */
+  background-repeat: repeat;
   border: 2px solid var(--mc-shadow);
   border-top-color: var(--mc-stone-light);
   border-left-color: var(--mc-stone-light);
@@ -845,15 +610,10 @@ main {
   font-size: 16px;
   padding: 6px;
   background: var(--mc-redstone);
-  background-image:
-    repeating-linear-gradient(
-      45deg,
-      transparent 0px,
-      rgba(0, 0, 0, 0.2) 1px,
-      transparent 3px,
-      rgba(255, 255, 255, 0.1) 4px,
-      transparent 6px
-    );
+  background-image: url('blocks.png');
+  background-size: 540px 270px;
+  background-position: -432px -108px; /* Red block - row 2, col 8 */
+  background-repeat: repeat;
   border: 2px solid var(--mc-shadow);
   border-top-color: rgba(255, 255, 255, 0.4);
   border-left-color: rgba(255, 255, 255, 0.4);
@@ -979,15 +739,10 @@ main {
 
 .result-btn.win {
   background: var(--mc-emerald);
-  background-image:
-    repeating-linear-gradient(
-      45deg,
-      transparent 0px,
-      rgba(0, 0, 0, 0.15) 1px,
-      transparent 3px,
-      rgba(255, 255, 255, 0.08) 4px,
-      transparent 6px
-    );
+  background-image: url('blocks.png');
+  background-size: 540px 270px;
+  background-position: -378px -54px; /* Lime/Green block - row 1, col 7 */
+  background-repeat: repeat;
   border-top-color: rgba(255, 255, 255, 0.4);
   border-left-color: rgba(255, 255, 255, 0.4);
   border-bottom-color: var(--mc-emerald-dark);
@@ -1004,15 +759,10 @@ main {
 
 .result-btn.loss {
   background: var(--mc-redstone);
-  background-image:
-    repeating-linear-gradient(
-      45deg,
-      transparent 0px,
-      rgba(0, 0, 0, 0.15) 1px,
-      transparent 3px,
-      rgba(255, 255, 255, 0.08) 4px,
-      transparent 6px
-    );
+  background-image: url('blocks.png');
+  background-size: 540px 270px;
+  background-position: -432px -108px; /* Red block - row 2, col 8 */
+  background-repeat: repeat;
   border-top-color: rgba(255, 255, 255, 0.4);
   border-left-color: rgba(255, 255, 255, 0.4);
   border-bottom-color: var(--mc-redstone-dark);
@@ -1029,15 +779,10 @@ main {
 
 .result-btn.inconclusive {
   background: var(--mc-cobble);
-  background-image:
-    repeating-linear-gradient(
-      37deg,
-      transparent 0px,
-      rgba(0, 0, 0, 0.1) 1px,
-      transparent 3px,
-      rgba(255, 255, 255, 0.05) 4px,
-      transparent 6px
-    );
+  background-image: url('blocks.png');
+  background-size: 540px 270px;
+  background-position: -486px -216px; /* Stone - row 4, col 9 */
+  background-repeat: repeat;
   border-top-color: var(--mc-stone-light);
   border-left-color: var(--mc-stone-light);
   border-bottom-color: var(--mc-stone-dark);
@@ -1072,15 +817,10 @@ main {
 
 .btn-primary {
   background: var(--mc-emerald);
-  background-image:
-    repeating-linear-gradient(
-      45deg,
-      transparent 0px,
-      rgba(0, 0, 0, 0.15) 1px,
-      transparent 3px,
-      rgba(255, 255, 255, 0.08) 4px,
-      transparent 6px
-    );
+  background-image: url('blocks.png');
+  background-size: 540px 270px;
+  background-position: -378px -54px; /* Lime/Green block - row 1, col 7 */
+  background-repeat: repeat;
   border-top-color: rgba(255, 255, 255, 0.4);
   border-left-color: rgba(255, 255, 255, 0.4);
   border-bottom-color: var(--mc-emerald-dark);
@@ -1106,15 +846,10 @@ main {
 
 .btn-secondary {
   background: var(--mc-stone);
-  background-image:
-    repeating-linear-gradient(
-      37deg,
-      transparent 0px,
-      rgba(0, 0, 0, 0.1) 1px,
-      transparent 3px,
-      rgba(255, 255, 255, 0.05) 4px,
-      transparent 6px
-    );
+  background-image: url('blocks.png');
+  background-size: 540px 270px;
+  background-position: -486px -216px; /* Stone - row 4, col 9 */
+  background-repeat: repeat;
   border-top-color: var(--mc-stone-light);
   border-left-color: var(--mc-stone-light);
   border-bottom-color: var(--mc-stone-dark);
@@ -1139,15 +874,10 @@ main {
 
 .btn-success {
   background: var(--mc-gold);
-  background-image:
-    repeating-linear-gradient(
-      45deg,
-      transparent 0px,
-      rgba(0, 0, 0, 0.1) 1px,
-      transparent 3px,
-      rgba(255, 255, 255, 0.15) 4px,
-      transparent 6px
-    );
+  background-image: url('blocks.png');
+  background-size: 540px 270px;
+  background-position: 0px -108px; /* Gold Block - row 2, col 0 */
+  background-repeat: repeat;
   border-top-color: rgba(255, 255, 255, 0.5);
   border-left-color: rgba(255, 255, 255, 0.5);
   border-bottom-color: rgba(204, 189, 61, 1);
