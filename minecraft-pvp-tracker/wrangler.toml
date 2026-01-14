@@ -5,7 +5,7 @@ compatibility_date = "2024-01-01"
 [[d1_databases]]
 binding = "DB"
 database_name = "minecraft-pvp-db"
-database_id = "your-database-id-here"
+database_id = "7a141b32-f487-4b1b-99d5-eda455cc2cde"
 
 # Pages configuration
 pages_build_output_dir = "public"
