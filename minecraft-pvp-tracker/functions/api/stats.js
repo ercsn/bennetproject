@@ -45,7 +45,6 @@ export async function onRequestGet(context) {
             SELECT result, timestamp
             FROM matches${whereClause}
             ORDER BY timestamp DESC
-            LIMIT 50
         `;
 
         const { results: recentMatches } = await DB.prepare(streakQuery).bind(...params).all();
