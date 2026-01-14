@@ -172,9 +172,29 @@ function renderChart(chartData) {
             plugins: {
                 legend: {
                     display: true,
-                    position: 'top'
+                    position: 'top',
+                    labels: {
+                        color: '#ffffff',
+                        font: {
+                            family: "'Press Start 2P', 'Courier New', monospace",
+                            size: 10
+                        }
+                    }
                 },
                 tooltip: {
+                    backgroundColor: 'rgba(0, 0, 0, 0.9)',
+                    titleColor: '#ffffff',
+                    bodyColor: '#ffffff',
+                    borderColor: '#ffffff',
+                    borderWidth: 2,
+                    titleFont: {
+                        family: "'Press Start 2P', 'Courier New', monospace",
+                        size: 10
+                    },
+                    bodyFont: {
+                        family: "'Press Start 2P', 'Courier New', monospace",
+                        size: 10
+                    },
                     callbacks: {
                         label: function(context) {
                             let label = context.dataset.label || '';
@@ -194,13 +214,40 @@ function renderChart(chartData) {
                 }
             },
             scales: {
+                x: {
+                    ticks: {
+                        color: '#ffffff',
+                        font: {
+                            family: "'Press Start 2P', 'Courier New', monospace",
+                            size: 8
+                        }
+                    },
+                    grid: {
+                        color: 'rgba(255, 255, 255, 0.1)'
+                    }
+                },
                 y: {
                     type: 'linear',
                     display: true,
                     position: 'left',
                     title: {
                         display: true,
-                        text: 'Win Rate %'
+                        text: 'Win Rate %',
+                        color: '#ffffff',
+                        font: {
+                            family: "'Press Start 2P', 'Courier New', monospace",
+                            size: 10
+                        }
+                    },
+                    ticks: {
+                        color: '#ffffff',
+                        font: {
+                            family: "'Press Start 2P', 'Courier New', monospace",
+                            size: 8
+                        }
+                    },
+                    grid: {
+                        color: 'rgba(255, 255, 255, 0.1)'
                     },
                     min: 0,
                     max: 100
@@ -211,10 +258,23 @@ function renderChart(chartData) {
                     position: 'right',
                     title: {
                         display: true,
-                        text: 'Cumulative Wins/Losses'
+                        text: 'Cumulative Wins/Losses',
+                        color: '#ffffff',
+                        font: {
+                            family: "'Press Start 2P', 'Courier New', monospace",
+                            size: 10
+                        }
+                    },
+                    ticks: {
+                        color: '#ffffff',
+                        font: {
+                            family: "'Press Start 2P', 'Courier New', monospace",
+                            size: 8
+                        }
                     },
                     grid: {
-                        drawOnChartArea: false
+                        drawOnChartArea: false,
+                        color: 'rgba(255, 255, 255, 0.1)'
                     }
                 }
             }
