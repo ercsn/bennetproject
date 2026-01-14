@@ -14,11 +14,25 @@
     <div class="container">
         <header>
             <h1>⚔️ Minecraft PvP Stats</h1>
-            <nav>
-                <a href="/" class="active">Dashboard</a>
-                <a href="/add.html">Add Match</a>
-            </nav>
         </header>
+
+        <!-- Quick Match Entry -->
+        <section class="quick-entry">
+            <button onclick="logMatch('win')" class="result-btn win">
+                ✓ Win
+            </button>
+            <button onclick="logMatch('loss')" class="result-btn loss">
+                ✗ Loss
+            </button>
+            <button onclick="logMatch('inconclusive')" class="result-btn inconclusive">
+                ~ Inconclusive
+            </button>
+        </section>
+
+        <!-- Success Toast -->
+        <div id="success-toast" class="success-toast" style="display: none;">
+            Match logged!
+        </div>
 
         <main>
             <!-- Stats Overview -->
