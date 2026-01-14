@@ -9,6 +9,40 @@ document.addEventListener('DOMContentLoaded', () => {
     loadMatches();
 });
 
+// Quick match logging
+async function logMatch(result) {
+    try {
+        const response = await fetch('/api/matches', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                result: result,
+                timestamp: new Date().toISOString()
+            })
+        });
+
+        if (response.ok) {
+            // Show success toast
+            const toast = document.getElementById('success-toast');
+            toast.style.display = 'block';
+            setTimeout(() => {
+                toast.style.display = 'none';
+            }, 2000);
+
+            // Reload data
+            loadStats();
+            loadMatches();
+        } else {
+            const data = await response.json();
+            alert('Failed to log match: ' + (data.error || 'Unknown error'));
+        }
+    } catch (error) {
+        alert('Network error: ' + error.message);
+    }
+}
+
 async function loadStats(startDate = null, endDate = null) {
     try {
         let url = '/api/stats';
