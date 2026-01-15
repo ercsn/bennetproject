@@ -93,9 +93,8 @@ body {
 
 header {
   background: var(--mc-planks);
-  background-image: url('blocks2.png');
-  background-size: 592px 656px;
-  background-position: -80px 0px; /* Oak Planks - column 5, row 0 */
+  background-image: url('woodBlocks.png');
+  background-size: 64px 64px; /* Oak planks texture tiled */
   background-repeat: repeat;
   border: 3px solid var(--mc-shadow);
   border-top-color: var(--mc-planks-light);
@@ -419,16 +418,15 @@ main {
 .chart-section,
 .matches-section,
 .form-section {
-  background: var(--mc-dirt);
-  background-image: url('blocks2.png');
-  background-size: 592px 656px;
-  background-position: 0px -96px; /* Dirt - column 0, row 6 */
+  background: var(--mc-planks);
+  background-image: url('woodBlocks.png');
+  background-size: 64px 64px; /* Oak planks texture tiled */
   background-repeat: repeat;
   border: 3px solid var(--mc-shadow);
-  border-top-color: var(--mc-dirt-light);
-  border-left-color: var(--mc-dirt-light);
-  border-bottom-color: var(--mc-dirt-dark);
-  border-right-color: var(--mc-dirt-dark);
+  border-top-color: var(--mc-planks-light);
+  border-left-color: var(--mc-planks-light);
+  border-bottom-color: var(--mc-planks-dark);
+  border-right-color: var(--mc-planks-dark);
   padding: var(--mc-space-3);
   position: relative;
   box-shadow:
