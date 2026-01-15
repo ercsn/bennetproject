@@ -68,8 +68,8 @@ body {
   font-family: var(--mc-font);
   background: var(--mc-deepslate);
   background-image: url('blocks.png');
-  background-size: 540px 270px; /* 10 blocks wide x 5 blocks tall at 54px per block */
-  background-position: -486px -216px; /* Stone block position */
+  background-size: 432px 324px; /* 8 blocks wide x 6 blocks tall at 54px per block */
+  background-position: -378px -216px; /* Stone block position - row 4, col 7 */
   background-repeat: repeat;
   image-rendering: pixelated;
   image-rendering: -moz-crisp-edges;
@@ -94,7 +94,7 @@ body {
 header {
   background: var(--mc-planks);
   background-image: url('blocks.png');
-  background-size: 540px 270px;
+  background-size: 432px 324px;
   background-position: -216px -216px; /* Oak Planks - row 4, col 4 */
   background-repeat: repeat;
   border: 3px solid var(--mc-shadow);
@@ -161,8 +161,8 @@ header h1 {
 .quick-entry .result-btn.win {
   background: var(--mc-emerald);
   background-image: url('blocks.png');
-  background-size: 540px 270px;
-  background-position: -378px -54px; /* Lime/Green block - row 1, col 7 */
+  background-size: 432px 324px;
+  background-position: -324px -54px; /* Lime/Green block - row 1, col 6 */
   background-repeat: repeat;
   border-top-color: rgba(255, 255, 255, 0.4);
   border-left-color: rgba(255, 255, 255, 0.4);
@@ -174,8 +174,8 @@ header h1 {
 .quick-entry .result-btn.loss {
   background: var(--mc-redstone);
   background-image: url('blocks.png');
-  background-size: 540px 270px;
-  background-position: -432px -108px; /* Red block - row 2, col 8 */
+  background-size: 432px 324px;
+  background-position: -378px -108px; /* Red block - row 2, col 7 */
   background-repeat: repeat;
   border-top-color: rgba(255, 255, 255, 0.4);
   border-left-color: rgba(255, 255, 255, 0.4);
@@ -187,8 +187,8 @@ header h1 {
 .quick-entry .result-btn.inconclusive {
   background: var(--mc-cobble);
   background-image: url('blocks.png');
-  background-size: 540px 270px;
-  background-position: -486px -216px; /* Stone - row 4, col 9 */
+  background-size: 432px 324px;
+  background-position: -378px -216px; /* Stone - row 4, col 7 */
   background-repeat: repeat;
   border-top-color: var(--mc-stone-light);
   border-left-color: var(--mc-stone-light);
@@ -208,8 +208,8 @@ header h1 {
   transform: translateX(-50%);
   background: var(--mc-emerald);
   background-image: url('blocks.png');
-  background-size: 540px 270px;
-  background-position: -378px -54px; /* Lime/Green block - row 1, col 7 */
+  background-size: 432px 324px;
+  background-position: -324px -54px; /* Lime/Green block - row 1, col 6 */
   background-repeat: repeat;
   border: 3px solid var(--mc-shadow);
   border-top-color: rgba(255, 255, 255, 0.4);
@@ -263,8 +263,8 @@ main {
 .stat-card {
   background: var(--mc-stone);
   background-image: url('blocks.png');
-  background-size: 540px 270px;
-  background-position: -486px -216px; /* Stone - row 4, col 9 */
+  background-size: 432px 324px;
+  background-position: -378px -216px; /* Stone - row 4, col 7 */
   background-repeat: repeat;
   border: 3px solid var(--mc-shadow);
   border-top-color: var(--mc-stone-light);
@@ -312,7 +312,7 @@ main {
 .stat-card.win {
   background: var(--mc-emerald-dark);
   background-image: url('blocks.png');
-  background-size: 540px 270px;
+  background-size: 432px 324px;
   background-position: -324px -162px; /* Emerald Ore - row 3, col 6 */
   background-repeat: repeat;
   border-color: var(--mc-emerald);
@@ -329,8 +329,8 @@ main {
 .stat-card.loss {
   background: var(--mc-redstone-dark);
   background-image: url('blocks.png');
-  background-size: 540px 270px;
-  background-position: -432px -162px; /* Redstone Ore - row 3, col 8 */
+  background-size: 432px 324px;
+  background-position: -378px -162px; /* Redstone Ore - row 3, col 7 */
   background-repeat: repeat;
   border-color: var(--mc-redstone);
   border-top-color: var(--mc-redstone);
@@ -378,7 +378,7 @@ main {
 .streak-card {
   background: var(--mc-planks);
   background-image: url('blocks.png');
-  background-size: 540px 270px;
+  background-size: 432px 324px;
   background-position: -216px -216px; /* Oak Planks - row 4, col 4 */
   background-repeat: repeat;
   border: 3px solid var(--mc-shadow);
@@ -426,8 +426,8 @@ main {
 .form-section {
   background: var(--mc-dirt);
   background-image: url('blocks.png');
-  background-size: 540px 270px;
-  background-position: -108px -216px; /* Dirt - row 4, col 2 */
+  background-size: 432px 324px;
+  background-position: -270px -216px; /* Dirt - row 4, col 5 */
   background-repeat: repeat;
   border: 3px solid var(--mc-shadow);
   border-top-color: var(--mc-dirt-light);
@@ -523,8 +523,8 @@ main {
 .match-item {
   background: var(--mc-stone);
   background-image: url('blocks.png');
-  background-size: 540px 270px;
-  background-position: -486px -216px; /* Stone - row 4, col 9 */
+  background-size: 432px 324px;
+  background-position: -378px -216px; /* Stone - row 4, col 7 */
   background-repeat: repeat;
   border: 2px solid var(--mc-shadow);
   border-top-color: var(--mc-stone-light);
@@ -611,8 +611,8 @@ main {
   padding: 6px;
   background: var(--mc-redstone);
   background-image: url('blocks.png');
-  background-size: 540px 270px;
-  background-position: -432px -108px; /* Red block - row 2, col 8 */
+  background-size: 432px 324px;
+  background-position: -378px -108px; /* Red block - row 2, col 7 */
   background-repeat: repeat;
   border: 2px solid var(--mc-shadow);
   border-top-color: rgba(255, 255, 255, 0.4);
@@ -740,8 +740,8 @@ main {
 .result-btn.win {
   background: var(--mc-emerald);
   background-image: url('blocks.png');
-  background-size: 540px 270px;
-  background-position: -378px -54px; /* Lime/Green block - row 1, col 7 */
+  background-size: 432px 324px;
+  background-position: -324px -54px; /* Lime/Green block - row 1, col 6 */
   background-repeat: repeat;
   border-top-color: rgba(255, 255, 255, 0.4);
   border-left-color: rgba(255, 255, 255, 0.4);
@@ -760,8 +760,8 @@ main {
 .result-btn.loss {
   background: var(--mc-redstone);
   background-image: url('blocks.png');
-  background-size: 540px 270px;
-  background-position: -432px -108px; /* Red block - row 2, col 8 */
+  background-size: 432px 324px;
+  background-position: -378px -108px; /* Red block - row 2, col 7 */
   background-repeat: repeat;
   border-top-color: rgba(255, 255, 255, 0.4);
   border-left-color: rgba(255, 255, 255, 0.4);
@@ -780,8 +780,8 @@ main {
 .result-btn.inconclusive {
   background: var(--mc-cobble);
   background-image: url('blocks.png');
-  background-size: 540px 270px;
-  background-position: -486px -216px; /* Stone - row 4, col 9 */
+  background-size: 432px 324px;
+  background-position: -378px -216px; /* Stone - row 4, col 7 */
   background-repeat: repeat;
   border-top-color: var(--mc-stone-light);
   border-left-color: var(--mc-stone-light);
@@ -818,8 +818,8 @@ main {
 .btn-primary {
   background: var(--mc-emerald);
   background-image: url('blocks.png');
-  background-size: 540px 270px;
-  background-position: -378px -54px; /* Lime/Green block - row 1, col 7 */
+  background-size: 432px 324px;
+  background-position: -324px -54px; /* Lime/Green block - row 1, col 6 */
   background-repeat: repeat;
   border-top-color: rgba(255, 255, 255, 0.4);
   border-left-color: rgba(255, 255, 255, 0.4);
@@ -847,8 +847,8 @@ main {
 .btn-secondary {
   background: var(--mc-stone);
   background-image: url('blocks.png');
-  background-size: 540px 270px;
-  background-position: -486px -216px; /* Stone - row 4, col 9 */
+  background-size: 432px 324px;
+  background-position: -378px -216px; /* Stone - row 4, col 7 */
   background-repeat: repeat;
   border-top-color: var(--mc-stone-light);
   border-left-color: var(--mc-stone-light);
@@ -875,8 +875,8 @@ main {
 .btn-success {
   background: var(--mc-gold);
   background-image: url('blocks.png');
-  background-size: 540px 270px;
-  background-position: 0px -108px; /* Gold Block - row 2, col 0 */
+  background-size: 432px 324px;
+  background-position: -54px -108px; /* Gold Block - row 2, col 1 */
   background-repeat: repeat;
   border-top-color: rgba(255, 255, 255, 0.5);
   border-left-color: rgba(255, 255, 255, 0.5);
