@@ -589,13 +589,15 @@ main {
 .match-notes {
   font-family: var(--mc-font);
   font-size: 10px;
-  color: var(--mc-text-gray);
+  color: var(--mc-text-white);
+  text-shadow: 1px 1px 0 var(--mc-shadow);
 }
 
 .match-timestamp {
   font-family: var(--mc-font);
   font-size: 10px;
-  color: var(--mc-text-gray);
+  color: var(--mc-text-white);
+  text-shadow: 1px 1px 0 var(--mc-shadow);
 }
 
 .match-delete-btn {
