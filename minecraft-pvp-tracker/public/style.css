@@ -515,9 +515,8 @@ main {
 
 .match-item {
   background: var(--mc-stone);
-  background-image: url('blocks2.png');
-  background-size: 592px 656px;
-  background-position: 0px -400px; /* Stone - column 0, row 25 */
+  background-image: url('stoneBlock.png');
+  background-size: 64px 64px; /* Stone bricks texture tiled */
   background-repeat: repeat;
   border: 2px solid var(--mc-shadow);
   border-top-color: var(--mc-stone-light);
