@@ -172,9 +172,8 @@ header h1 {
 
 .quick-entry .result-btn.loss {
   background: var(--mc-redstone);
-  background-image: url('blocks2.png');
-  background-size: 592px 656px;
-  background-position: -112px -320px; /* Red Wool - column 7, row 20 */
+  background-image: url('loseBlock.png');
+  background-size: 64px 64px; /* Redstone block texture tiled */
   background-repeat: repeat;
   border-top-color: rgba(255, 255, 255, 0.4);
   border-left-color: rgba(255, 255, 255, 0.4);
@@ -319,15 +318,14 @@ main {
 }
 
 .stat-card.win .stat-value {
-  color: var(--mc-emerald);
+  color: var(--mc-text-white);
 }
 
-/* Loss Stat - Redstone Ore */
+/* Loss Stat - Redstone Block */
 .stat-card.loss {
   background: var(--mc-redstone-dark);
-  background-image: url('blocks2.png');
-  background-size: 592px 656px;
-  background-position: 0px -592px; /* Redstone Ore - column 0, row 37 */
+  background-image: url('loseBlock.png');
+  background-size: 64px 64px; /* Redstone block texture tiled */
   background-repeat: repeat;
   border-color: var(--mc-redstone);
   border-top-color: var(--mc-redstone);
@@ -336,7 +334,7 @@ main {
 }
 
 .stat-card.loss .stat-value {
-  color: var(--mc-redstone);
+  color: var(--mc-text-white);
 }
 
 @keyframes emerald-pulse {
@@ -607,9 +605,8 @@ main {
   font-size: 16px;
   padding: 6px;
   background: var(--mc-redstone);
-  background-image: url('blocks2.png');
-  background-size: 592px 656px;
-  background-position: -112px -320px; /* Red Wool - column 7, row 20 */
+  background-image: url('loseBlock.png');
+  background-size: 64px 64px; /* Redstone block texture tiled */
   background-repeat: repeat;
   border: 2px solid var(--mc-shadow);
   border-top-color: rgba(255, 255, 255, 0.4);
@@ -755,9 +752,8 @@ main {
 
 .result-btn.loss {
   background: var(--mc-redstone);
-  background-image: url('blocks2.png');
-  background-size: 592px 656px;
-  background-position: -112px -320px; /* Red Wool - column 7, row 20 */
+  background-image: url('loseBlock.png');
+  background-size: 64px 64px; /* Redstone block texture tiled */
   background-repeat: repeat;
   border-top-color: rgba(255, 255, 255, 0.4);
   border-left-color: rgba(255, 255, 255, 0.4);
