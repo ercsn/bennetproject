@@ -919,9 +919,8 @@ main {
 
 .btn-secondary {
   background: var(--mc-stone);
-  background-image: url('blocks2.png');
-  background-size: 592px 656px;
-  background-position: 0px -400px; /* Stone - column 0, row 25 */
+  background-image: url('stoneBlock.png');
+  background-size: 64px 64px;
   background-repeat: repeat;
   border-top-color: var(--mc-stone-light);
   border-left-color: var(--mc-stone-light);
@@ -946,32 +945,30 @@ main {
 }
 
 .btn-success {
-  background: var(--mc-gold);
-  background-image: url('blocks2.png');
-  background-size: 592px 656px;
-  background-position: 0px -528px; /* Gold Ore - column 0, row 33 */
+  background: var(--mc-stone);
+  background-image: url('stoneBlock.png');
+  background-size: 64px 64px;
   background-repeat: repeat;
-  border-top-color: rgba(255, 255, 255, 0.5);
-  border-left-color: rgba(255, 255, 255, 0.5);
-  border-bottom-color: rgba(204, 189, 61, 1);
-  border-right-color: rgba(204, 189, 61, 1);
-  color: var(--mc-text-dark);
-  text-shadow: none;
+  border-top-color: var(--mc-stone-light);
+  border-left-color: var(--mc-stone-light);
+  border-bottom-color: var(--mc-stone-dark);
+  border-right-color: var(--mc-stone-dark);
+  color: var(--mc-text-white);
+  text-shadow: 2px 2px 0 var(--mc-shadow);
 }
 
 .btn-success:hover {
   transform: translate(-2px, -2px);
   box-shadow:
     inset 0 0 0 1px rgba(0, 0, 0, 0.3),
-    2px 2px 0 var(--mc-shadow),
-    0 0 12px var(--mc-gold);
+    2px 2px 0 var(--mc-shadow);
 }
 
 .btn-success:active {
   transform: translate(2px, 2px);
-  border-top-color: rgba(204, 189, 61, 1);
-  border-left-color: rgba(204, 189, 61, 1);
-  box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.4);
+  border-top-color: var(--mc-stone-dark);
+  border-left-color: var(--mc-stone-dark);
+  box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.6);
 }
 
 .form-actions {
