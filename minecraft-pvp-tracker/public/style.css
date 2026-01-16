@@ -450,8 +450,28 @@ main {
   text-shadow: 2px 2px 0 var(--mc-shadow);
 }
 
+.streak-card.win-streak {
+  background: #3d3d3d;
+  background-image: url('ntheriteBlock.png');
+  background-size: 64px 64px;
+  background-repeat: repeat;
+  border-color: #4a4a4a;
+  border-top-color: rgba(255, 255, 255, 0.3);
+  border-left-color: rgba(255, 255, 255, 0.3);
+}
+
 .streak-card.win-streak .streak-value {
   color: var(--mc-emerald);
+}
+
+.streak-card.loss-streak {
+  background: var(--mc-redstone);
+  background-image: url('TNT.png');
+  background-size: 64px 64px;
+  background-repeat: repeat;
+  border-color: var(--mc-redstone);
+  border-top-color: rgba(255, 255, 255, 0.4);
+  border-left-color: rgba(255, 255, 255, 0.4);
 }
 
 .streak-card.loss-streak .streak-value {
