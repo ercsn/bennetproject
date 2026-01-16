@@ -455,9 +455,16 @@ main {
   background-image: url('ntheriteBlock.png');
   background-size: 64px 64px;
   background-repeat: repeat;
+  background-position: center;
   border-color: #4a4a4a;
   border-top-color: rgba(255, 255, 255, 0.3);
   border-left-color: rgba(255, 255, 255, 0.3);
+}
+
+.streak-card.win-streak .streak-label,
+.streak-card.win-streak .streak-value {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 4px 8px;
 }
 
 .streak-card.win-streak .streak-value {
@@ -469,9 +476,16 @@ main {
   background-image: url('TNT.png');
   background-size: 64px 64px;
   background-repeat: repeat;
+  background-position: center;
   border-color: var(--mc-redstone);
   border-top-color: rgba(255, 255, 255, 0.4);
   border-left-color: rgba(255, 255, 255, 0.4);
+}
+
+.streak-card.loss-streak .streak-label,
+.streak-card.loss-streak .streak-value {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 4px 8px;
 }
 
 .streak-card.loss-streak .streak-value {
