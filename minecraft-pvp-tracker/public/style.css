@@ -182,15 +182,14 @@ header h1 {
 }
 
 .quick-entry .result-btn.inconclusive {
-  background: var(--mc-cobble);
-  background-image: url('blocks2.png');
-  background-size: 592px 656px;
-  background-position: 0px -400px; /* Stone - column 0, row 25 */
+  background: var(--mc-grass);
+  background-image: url('grassBlock.png');
+  background-size: 64px 64px;
   background-repeat: repeat;
-  border-top-color: var(--mc-stone-light);
-  border-left-color: var(--mc-stone-light);
-  border-bottom-color: var(--mc-stone-dark);
-  border-right-color: var(--mc-stone-dark);
+  border-top-color: var(--mc-grass-light);
+  border-left-color: var(--mc-grass-light);
+  border-bottom-color: var(--mc-grass-dark);
+  border-right-color: var(--mc-grass-dark);
   color: var(--mc-text-white);
 }
 
@@ -648,9 +647,12 @@ main {
 }
 
 .match-result-badge.inconclusive {
-  background: var(--mc-cobble);
-  border-top-color: var(--mc-stone-light);
-  border-left-color: var(--mc-stone-light);
+  background: var(--mc-grass);
+  background-image: url('grassBlock.png');
+  background-size: 64px 64px;
+  background-repeat: repeat;
+  border-top-color: var(--mc-grass-light);
+  border-left-color: var(--mc-grass-light);
   color: var(--mc-text-white);
 }
 
@@ -851,15 +853,14 @@ main {
 }
 
 .result-btn.inconclusive {
-  background: var(--mc-cobble);
-  background-image: url('blocks2.png');
-  background-size: 592px 656px;
-  background-position: 0px -400px; /* Stone - column 0, row 25 */
+  background: var(--mc-grass);
+  background-image: url('grassBlock.png');
+  background-size: 64px 64px;
   background-repeat: repeat;
-  border-top-color: var(--mc-stone-light);
-  border-left-color: var(--mc-stone-light);
-  border-bottom-color: var(--mc-stone-dark);
-  border-right-color: var(--mc-stone-dark);
+  border-top-color: var(--mc-grass-light);
+  border-left-color: var(--mc-grass-light);
+  border-bottom-color: var(--mc-grass-dark);
+  border-right-color: var(--mc-grass-dark);
   color: var(--mc-text-white);
 }
 
