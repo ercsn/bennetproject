@@ -182,14 +182,14 @@ header h1 {
 }
 
 .quick-entry .result-btn.inconclusive {
-  background: var(--mc-grass);
-  background-image: url('grassBlock.png');
+  background: var(--mc-dirt);
+  background-image: url('dirtwall.png');
   background-size: 64px 64px;
   background-repeat: repeat;
-  border-top-color: var(--mc-grass-light);
-  border-left-color: var(--mc-grass-light);
-  border-bottom-color: var(--mc-grass-dark);
-  border-right-color: var(--mc-grass-dark);
+  border-top-color: var(--mc-dirt-light);
+  border-left-color: var(--mc-dirt-light);
+  border-bottom-color: var(--mc-dirt-dark);
+  border-right-color: var(--mc-dirt-dark);
   color: var(--mc-text-white);
 }
 
@@ -647,12 +647,12 @@ main {
 }
 
 .match-result-badge.inconclusive {
-  background: var(--mc-grass);
-  background-image: url('grassBlock.png');
+  background: var(--mc-dirt);
+  background-image: url('dirtwall.png');
   background-size: 64px 64px;
   background-repeat: repeat;
-  border-top-color: var(--mc-grass-light);
-  border-left-color: var(--mc-grass-light);
+  border-top-color: var(--mc-dirt-light);
+  border-left-color: var(--mc-dirt-light);
   color: var(--mc-text-white);
 }
 
@@ -853,14 +853,14 @@ main {
 }
 
 .result-btn.inconclusive {
-  background: var(--mc-grass);
-  background-image: url('grassBlock.png');
+  background: var(--mc-dirt);
+  background-image: url('dirtwall.png');
   background-size: 64px 64px;
   background-repeat: repeat;
-  border-top-color: var(--mc-grass-light);
-  border-left-color: var(--mc-grass-light);
-  border-bottom-color: var(--mc-grass-dark);
-  border-right-color: var(--mc-grass-dark);
+  border-top-color: var(--mc-dirt-light);
+  border-left-color: var(--mc-dirt-light);
+  border-bottom-color: var(--mc-dirt-dark);
+  border-right-color: var(--mc-dirt-dark);
   color: var(--mc-text-white);
 }
 
