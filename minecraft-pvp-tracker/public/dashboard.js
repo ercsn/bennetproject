@@ -9,18 +9,40 @@ document.addEventListener('DOMContentLoaded', () => {
     loadMatches();
 });
 
+// Toggle advanced settings
+function toggleAdvancedSettings() {
+    const settings = document.getElementById('advanced-settings');
+    const toggle = document.querySelector('.advanced-toggle');
+    if (settings.style.display === 'none') {
+        settings.style.display = 'block';
+        toggle.textContent = '▼ Advanced Settings';
+    } else {
+        settings.style.display = 'none';
+        toggle.textContent = '▶ Advanced Settings';
+    }
+}
+
 // Quick match logging
 async function logMatch(result) {
     try {
+        const opponentName = document.getElementById('opponent-name')?.value.trim() || '';
+        const notes = document.getElementById('match-notes')?.value.trim() || '';
+
+        const matchData = {
+            result: result,
+            timestamp: new Date().toISOString()
+        };
+
+        // Only include optional fields if they have values
+        if (opponentName) matchData.opponent_name = opponentName;
+        if (notes) matchData.notes = notes;
+
         const response = await fetch('/api/matches', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({
-                result: result,
-                timestamp: new Date().toISOString()
-            })
+            body: JSON.stringify(matchData)
         });
 
         if (response.ok) {
@@ -30,6 +52,12 @@ async function logMatch(result) {
             setTimeout(() => {
                 toast.style.display = 'none';
             }, 2000);
+
+            // Clear advanced settings fields
+            const opponentInput = document.getElementById('opponent-name');
+            const notesInput = document.getElementById('match-notes');
+            if (opponentInput) opponentInput.value = '';
+            if (notesInput) notesInput.value = '';
 
             // Reload data
             loadStats();

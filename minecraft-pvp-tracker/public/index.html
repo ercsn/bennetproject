@@ -29,6 +29,23 @@
             </button>
         </section>
 
+        <!-- Advanced Settings (collapsed by default) -->
+        <section class="advanced-settings-section">
+            <button onclick="toggleAdvancedSettings()" class="advanced-toggle btn btn-secondary">
+                ▶ Advanced Settings
+            </button>
+            <div id="advanced-settings" class="advanced-settings" style="display: none;">
+                <div class="form-group">
+                    <label for="opponent-name">Opponent Name (optional)</label>
+                    <input type="text" id="opponent-name" placeholder="Enter opponent name">
+                </div>
+                <div class="form-group">
+                    <label for="match-notes">Notes (optional)</label>
+                    <textarea id="match-notes" rows="2" placeholder="Add notes about the match"></textarea>
+                </div>
+            </div>
+        </section>
+
         <!-- Success Toast -->
         <div id="success-toast" class="success-toast" style="display: none;">
             Match logged!

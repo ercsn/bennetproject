@@ -194,6 +194,44 @@ header h1 {
 }
 
 /* ==================
+   ADVANCED SETTINGS
+   ================== */
+
+.advanced-settings-section {
+  margin-bottom: var(--mc-space-2);
+}
+
+.advanced-toggle {
+  width: 100%;
+  text-align: left;
+  font-size: 10px;
+  padding: var(--mc-space-1) var(--mc-space-2);
+}
+
+.advanced-settings {
+  background: var(--mc-planks);
+  background-image: url('woodBlocks.png');
+  background-size: 64px 64px;
+  background-repeat: repeat;
+  border: 3px solid var(--mc-shadow);
+  border-top: none;
+  border-top-color: var(--mc-planks-light);
+  border-left-color: var(--mc-planks-light);
+  border-bottom-color: var(--mc-planks-dark);
+  border-right-color: var(--mc-planks-dark);
+  padding: var(--mc-space-2);
+  box-shadow: 0 4px 0 var(--mc-shadow);
+}
+
+.advanced-settings .form-group {
+  margin-bottom: var(--mc-space-2);
+}
+
+.advanced-settings .form-group:last-child {
+  margin-bottom: 0;
+}
+
+/* ==================
    SUCCESS TOAST
    ================== */
 
