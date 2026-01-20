@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Matches - Minecraft PvP Stats</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>All Matches</h1>
+        </header>
+
+        <!-- Back Button -->
+        <section class="nav-section">
+            <a href="/" class="btn btn-secondary">Back to Dashboard</a>
+        </section>
+
+        <!-- Filter Section -->
+        <section class="filter-section">
+            <div class="filter-controls">
+                <label>
+                    Start Date:
+                    <input type="date" id="start-date">
+                </label>
+                <label>
+                    End Date:
+                    <input type="date" id="end-date">
+                </label>
+                <button onclick="applyFilter()" class="btn btn-secondary">Apply Filter</button>
+                <button onclick="clearFilter()" class="btn btn-secondary">Clear</button>
+            </div>
+        </section>
+
+        <!-- All Matches -->
+        <section class="matches-section">
+            <div id="matches-list" class="matches-list compact">
+                <div class="loading">Loading matches...</div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Edit Modal -->
+    <div id="edit-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <h2>Edit Match</h2>
+            <form id="edit-form" class="match-form">
+                <input type="hidden" id="edit-match-id">
+                <div class="form-group">
+                    <label for="edit-opponent">Opponent</label>
+                    <input type="text" id="edit-opponent" required>
+                </div>
+                <div class="form-group">
+                    <label>Result</label>
+                    <div class="result-buttons compact">
+                        <button type="button" class="result-btn win compact" onclick="selectResult('win')">Win</button>
+                        <button type="button" class="result-btn loss compact" onclick="selectResult('loss')">Loss</button>
+                        <button type="button" class="result-btn inconclusive compact" onclick="selectResult('inconclusive')">Inconclusive</button>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="edit-notes">Notes</label>
+                    <textarea id="edit-notes" rows="2"></textarea>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Save</button>
+                    <button type="button" class="btn btn-secondary" onclick="closeModal()">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="/matches.js"></script>
+</body>
+</html>

@@ -1090,3 +1090,155 @@ main {
     font-size: 12px;
   }
 }
+
+/* ==================
+   NAVIGATION SECTION
+   ================== */
+
+.nav-section {
+  margin-bottom: var(--mc-space-2);
+}
+
+.nav-section .btn {
+  text-decoration: none;
+  display: inline-block;
+}
+
+/* ==================
+   COMPACT MATCHES LIST
+   ================== */
+
+.matches-list.compact {
+  gap: 4px;
+}
+
+.match-item.compact {
+  padding: var(--mc-space-1);
+  grid-template-columns: 80px 1fr auto auto auto;
+  gap: var(--mc-space-1);
+  min-height: auto;
+}
+
+.match-result-badge.compact {
+  font-size: 8px;
+  padding: 2px 6px;
+}
+
+.match-opponent.compact {
+  font-family: var(--mc-font);
+  font-size: 10px;
+  color: var(--mc-text-white);
+  text-shadow: 1px 1px 0 var(--mc-shadow);
+}
+
+.match-timestamp.compact {
+  font-size: 8px;
+}
+
+.match-edit-btn {
+  font-size: 14px;
+  padding: 4px;
+  background: var(--mc-lapis);
+  border: 2px solid var(--mc-shadow);
+  border-top-color: rgba(255, 255, 255, 0.4);
+  border-left-color: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  transition: none;
+  line-height: 1;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.4);
+}
+
+.match-edit-btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow:
+    inset 0 0 0 1px rgba(0, 0, 0, 0.4),
+    2px 2px 0 var(--mc-shadow);
+}
+
+.match-edit-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.match-delete-btn.compact {
+  width: 28px;
+  height: 28px;
+  font-size: 14px;
+  padding: 4px;
+}
+
+.result-btn.compact {
+  padding: var(--mc-space-1);
+  font-size: 10px;
+}
+
+.result-buttons.compact {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* ==================
+   MODAL
+   ================== */
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: var(--mc-planks);
+  background-image: url('woodBlocks.png');
+  background-size: 64px 64px;
+  background-repeat: repeat;
+  border: 4px solid var(--mc-shadow);
+  border-top-color: var(--mc-planks-light);
+  border-left-color: var(--mc-planks-light);
+  border-bottom-color: var(--mc-planks-dark);
+  border-right-color: var(--mc-planks-dark);
+  padding: var(--mc-space-3);
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 8px 0 var(--mc-shadow);
+}
+
+.modal-content h2 {
+  font-family: var(--mc-font);
+  font-size: 16px;
+  color: var(--mc-text-white);
+  text-shadow: 2px 2px 0 var(--mc-shadow);
+  margin-bottom: var(--mc-space-2);
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .match-item.compact {
+    grid-template-columns: 60px 1fr auto auto;
+    gap: 4px;
+  }
+
+  .match-result-badge.compact {
+    font-size: 6px;
+    padding: 2px 4px;
+  }
+
+  .match-opponent.compact {
+    font-size: 8px;
+  }
+
+  .result-buttons.compact {
+    grid-template-columns: 1fr;
+  }
+}
