@@ -723,6 +723,14 @@ main {
   box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.6);
 }
 
+.see-all-container {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--mc-space-2);
+  position: relative;
+  z-index: 1;
+}
+
 /* ==================
    FORM STYLES
    ================== */

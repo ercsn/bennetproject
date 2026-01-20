@@ -406,3 +406,11 @@ async function deleteMatch(matchId) {
         alert('Network error: ' + error.message);
     }
 }
+
+function seeAllMatches() {
+    const startDate = document.getElementById('start-date').value;
+    const endDate = document.getElementById('end-date').value;
+    const start = startDate ? startDate + 'T00:00:00' : null;
+    const end = endDate ? endDate + 'T23:59:59' : null;
+    loadMatches(start, end, 1000);
+}
