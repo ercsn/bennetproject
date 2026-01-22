@@ -32,10 +32,10 @@ async function loadMatches(startDate = null, endDate = null) {
                 <span class="match-opponent compact">${escapeHtml(match.opponent_name)}</span>
                 <span class="match-timestamp compact">${formatDate(match.timestamp)}</span>
                 <button class="match-edit-btn" onclick="editMatch(${match.id})" title="Edit match">
-                    ✏️
+                    E
                 </button>
                 <button class="match-delete-btn compact" onclick="deleteMatch(${match.id})" title="Delete match">
-                    🗑️
+                    X
                 </button>
             </div>
         `).join('');

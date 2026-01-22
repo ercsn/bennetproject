@@ -9,3 +9,7 @@ database_id = "7a141b32-f487-4b1b-99d5-eda455cc2cde"
 
 # Pages configuration
 pages_build_output_dir = "public"
+
+# Environment variables
+[vars]
+JWT_SECRET = "CHANGE_THIS_TO_A_SECURE_SECRET_IN_PRODUCTION"

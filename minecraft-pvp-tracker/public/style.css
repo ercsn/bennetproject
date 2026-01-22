@@ -206,6 +206,14 @@ header h1 {
   text-align: left;
   font-size: 10px;
   padding: var(--mc-space-1) var(--mc-space-2);
+  background: var(--mc-obsidian);
+  background-image: url('Bedrock.png');
+  background-size: 64px 64px;
+  background-repeat: repeat;
+  border-top-color: #555;
+  border-left-color: #555;
+  border-bottom-color: #222;
+  border-right-color: #222;
 }
 
 .advanced-settings {
@@ -1278,5 +1286,169 @@ main {
 
   .result-buttons.compact {
     grid-template-columns: 1fr;
+  }
+}
+
+/* ==================
+   AUTH PAGES
+   ================== */
+
+.auth-container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding-top: var(--mc-space-4);
+}
+
+.auth-section {
+  background: var(--mc-planks);
+  background-image: url('woodBlocks.png');
+  background-size: 64px 64px;
+  background-repeat: repeat;
+  border: 3px solid var(--mc-shadow);
+  border-top-color: var(--mc-planks-light);
+  border-left-color: var(--mc-planks-light);
+  border-bottom-color: var(--mc-planks-dark);
+  border-right-color: var(--mc-planks-dark);
+  padding: var(--mc-space-3);
+  position: relative;
+  box-shadow:
+    0 4px 0 var(--mc-shadow),
+    inset 0 0 0 1px rgba(0, 0, 0, 0.3);
+}
+
+.auth-section h2 {
+  font-family: var(--mc-font);
+  font-size: 16px;
+  color: var(--mc-text-white);
+  text-shadow:
+    2px 2px 0 var(--mc-shadow),
+    3px 3px 0 rgba(0, 0, 0, 0.3);
+  margin-bottom: var(--mc-space-3);
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--mc-space-2);
+}
+
+.auth-form input[type="email"],
+.auth-form input[type="password"] {
+  font-family: var(--mc-font);
+  font-size: 12px;
+  padding: var(--mc-space-2);
+  background: var(--mc-obsidian);
+  border: 2px solid var(--mc-shadow);
+  color: var(--mc-text-white);
+  box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.9);
+  width: 100%;
+}
+
+.auth-form input:focus {
+  outline: none;
+  border-color: var(--mc-diamond);
+  box-shadow:
+    inset 2px 2px 4px rgba(0, 0, 0, 0.9),
+    0 0 0 2px var(--mc-diamond);
+}
+
+.btn-full {
+  width: 100%;
+}
+
+.auth-links {
+  margin-top: var(--mc-space-3);
+  text-align: center;
+}
+
+.auth-links p {
+  font-family: var(--mc-font);
+  font-size: 10px;
+  color: var(--mc-text-gray);
+  text-shadow: 1px 1px 0 var(--mc-shadow);
+}
+
+.auth-links a {
+  color: var(--mc-diamond);
+  text-decoration: none;
+}
+
+.auth-links a:hover {
+  color: var(--mc-text-white);
+  text-decoration: underline;
+}
+
+/* ==================
+   USER INFO & LOGOUT
+   ================== */
+
+.user-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--mc-stone);
+  background-image: url('stoneBlock.png');
+  background-size: 64px 64px;
+  background-repeat: repeat;
+  border: 2px solid var(--mc-shadow);
+  border-top-color: var(--mc-stone-light);
+  border-left-color: var(--mc-stone-light);
+  border-bottom-color: var(--mc-stone-dark);
+  border-right-color: var(--mc-stone-dark);
+  padding: var(--mc-space-1) var(--mc-space-2);
+  margin-bottom: var(--mc-space-2);
+}
+
+.user-email {
+  font-family: var(--mc-font);
+  font-size: 10px;
+  color: var(--mc-text-white);
+  text-shadow: 1px 1px 0 var(--mc-shadow);
+}
+
+.btn-logout {
+  font-family: var(--mc-font);
+  font-size: 10px;
+  padding: 4px 8px;
+  background: var(--mc-redstone);
+  background-image: url('loseBlock.png');
+  background-size: 64px 64px;
+  background-repeat: repeat;
+  border: 2px solid var(--mc-shadow);
+  border-top-color: rgba(255, 255, 255, 0.4);
+  border-left-color: rgba(255, 255, 255, 0.4);
+  border-bottom-color: var(--mc-redstone-dark);
+  border-right-color: var(--mc-redstone-dark);
+  color: var(--mc-text-white);
+  cursor: pointer;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 0 var(--mc-shadow);
+}
+
+.btn-logout:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 2px 2px 0 var(--mc-shadow);
+}
+
+.btn-logout:active {
+  transform: translate(2px, 2px);
+  box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+@media (max-width: 768px) {
+  .auth-container {
+    padding-top: var(--mc-space-2);
+  }
+
+  .auth-section h2 {
+    font-size: 14px;
+  }
+
+  .user-bar {
+    flex-direction: column;
+    gap: var(--mc-space-1);
+    text-align: center;
   }
 }

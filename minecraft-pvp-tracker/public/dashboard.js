@@ -15,10 +15,10 @@ function toggleAdvancedSettings() {
     const toggle = document.querySelector('.advanced-toggle');
     if (settings.style.display === 'none') {
         settings.style.display = 'block';
-        toggle.textContent = '▼ Advanced Settings';
+        toggle.textContent = 'Advanced Settings';
     } else {
         settings.style.display = 'none';
-        toggle.textContent = '▶ Advanced Settings';
+        toggle.textContent = 'Advanced Settings';
     }
 }
 
@@ -136,7 +136,7 @@ async function loadMatches(startDate = null, endDate = null, limit = 20) {
                 </div>
                 <div class="match-timestamp">${formatDate(match.timestamp)}</div>
                 <button class="match-delete-btn" onclick="deleteMatch(${match.id})" title="Delete match">
-                    🗑️
+                    X
                 </button>
             </div>
         `).join('');
