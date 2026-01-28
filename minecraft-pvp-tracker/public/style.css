@@ -201,7 +201,7 @@ header h1 {
   margin-bottom: var(--mc-space-2);
 }
 
-.advanced-toggle {
+.advanced-toggle.btn.btn-secondary {
   width: 100%;
   text-align: left;
   font-size: 10px;
@@ -214,6 +214,13 @@ header h1 {
   border-left-color: #555;
   border-bottom-color: #222;
   border-right-color: #222;
+}
+
+.advanced-toggle.btn.btn-secondary:hover {
+  background: var(--mc-obsidian);
+  background-image: url('Bedrock.png');
+  background-size: 64px 64px;
+  background-repeat: repeat;
 }
 
 .advanced-settings {
