@@ -182,14 +182,14 @@ header h1 {
 }
 
 .quick-entry .result-btn.inconclusive {
-  background: #c77b4f;
-  background-image: url('copperblock.png');
+  background: #4a9e8e;
+  background-image: url('OxidizedCopperpng.png');
   background-size: 64px 64px;
   background-repeat: repeat;
-  border-top-color: #e09070;
-  border-left-color: #e09070;
-  border-bottom-color: #8b5a3c;
-  border-right-color: #8b5a3c;
+  border-top-color: #6bc4b0;
+  border-left-color: #6bc4b0;
+  border-bottom-color: #357568;
+  border-right-color: #357568;
   color: var(--mc-text-white);
 }
 
@@ -700,12 +700,12 @@ main {
 }
 
 .match-result-badge.inconclusive {
-  background: #c77b4f;
-  background-image: url('copperblock.png');
+  background: #4a9e8e;
+  background-image: url('OxidizedCopperpng.png');
   background-size: 64px 64px;
   background-repeat: repeat;
-  border-top-color: #e09070;
-  border-left-color: #e09070;
+  border-top-color: #6bc4b0;
+  border-left-color: #6bc4b0;
   color: var(--mc-text-white);
 }
 
@@ -914,14 +914,14 @@ main {
 }
 
 .result-btn.inconclusive {
-  background: #c77b4f;
-  background-image: url('copperblock.png');
+  background: #4a9e8e;
+  background-image: url('OxidizedCopperpng.png');
   background-size: 64px 64px;
   background-repeat: repeat;
-  border-top-color: #e09070;
-  border-left-color: #e09070;
-  border-bottom-color: #8b5a3c;
-  border-right-color: #8b5a3c;
+  border-top-color: #6bc4b0;
+  border-left-color: #6bc4b0;
+  border-bottom-color: #357568;
+  border-right-color: #357568;
   color: var(--mc-text-white);
 }
 
