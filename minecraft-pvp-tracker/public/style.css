@@ -182,14 +182,14 @@ header h1 {
 }
 
 .quick-entry .result-btn.inconclusive {
-  background: var(--mc-dirt);
-  background-image: url('dirtwall.png');
+  background: #c77b4f;
+  background-image: url('copperblock.png');
   background-size: 64px 64px;
   background-repeat: repeat;
-  border-top-color: var(--mc-dirt-light);
-  border-left-color: var(--mc-dirt-light);
-  border-bottom-color: var(--mc-dirt-dark);
-  border-right-color: var(--mc-dirt-dark);
+  border-top-color: #e09070;
+  border-left-color: #e09070;
+  border-bottom-color: #8b5a3c;
+  border-right-color: #8b5a3c;
   color: var(--mc-text-white);
 }
 
@@ -700,12 +700,12 @@ main {
 }
 
 .match-result-badge.inconclusive {
-  background: var(--mc-dirt);
-  background-image: url('dirtwall.png');
+  background: #c77b4f;
+  background-image: url('copperblock.png');
   background-size: 64px 64px;
   background-repeat: repeat;
-  border-top-color: var(--mc-dirt-light);
-  border-left-color: var(--mc-dirt-light);
+  border-top-color: #e09070;
+  border-left-color: #e09070;
   color: var(--mc-text-white);
 }
 
@@ -914,14 +914,14 @@ main {
 }
 
 .result-btn.inconclusive {
-  background: var(--mc-dirt);
-  background-image: url('dirtwall.png');
+  background: #c77b4f;
+  background-image: url('copperblock.png');
   background-size: 64px 64px;
   background-repeat: repeat;
-  border-top-color: var(--mc-dirt-light);
-  border-left-color: var(--mc-dirt-light);
-  border-bottom-color: var(--mc-dirt-dark);
-  border-right-color: var(--mc-dirt-dark);
+  border-top-color: #e09070;
+  border-left-color: #e09070;
+  border-bottom-color: #8b5a3c;
+  border-right-color: #8b5a3c;
   color: var(--mc-text-white);
 }
 
